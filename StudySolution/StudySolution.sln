@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module2", "Module2", "{DFC9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Module2\Task1\Task1\Task1.csproj", "{431BB4E9-A2F9-444B-9124-30367989180C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "..\StudySolutionModule2\Task2\Task2\Task2.csproj", "{884E8A14-818B-4BE9-875A-29FB74FD4A54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{431BB4E9-A2F9-444B-9124-30367989180C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431BB4E9-A2F9-444B-9124-30367989180C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431BB4E9-A2F9-444B-9124-30367989180C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884E8A14-818B-4BE9-875A-29FB74FD4A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884E8A14-818B-4BE9-875A-29FB74FD4A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884E8A14-818B-4BE9-875A-29FB74FD4A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884E8A14-818B-4BE9-875A-29FB74FD4A54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{431BB4E9-A2F9-444B-9124-30367989180C} = {DFC98924-257B-49DC-87F0-8DB084E36F9B}
+		{884E8A14-818B-4BE9-875A-29FB74FD4A54} = {DFC98924-257B-49DC-87F0-8DB084E36F9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD0C37CE-C7E8-46A9-BFAD-88979133DD7C}
