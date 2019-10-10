@@ -4,6 +4,7 @@ namespace Task1
 {
     class Program
     {
+        const int Income = 500;
         static void Main(string[] args)
         {
             Console.WriteLine("Number of companies: ");
@@ -14,7 +15,7 @@ namespace Task1
 
                 if (double.TryParse(Console.ReadLine(), out var taxPercentage))
                 {
-                    Console.WriteLine($"Taxes from all companies will be {Tax.Calculate(companyCount, taxPercentage)}.");
+                    Console.WriteLine($"Taxes from all companies will be {companyCount * Income * (taxPercentage / 100)}.");
                 }
                 else
                 {
