@@ -1,10 +1,16 @@
 ﻿namespace Task4
 {
-    abstract class Figure
+    internal abstract class Figure
     {
-        public abstract double Perimeter { get; }
-        public abstract double Area { get; }
-        public abstract double GetParameterByPerimeter(double perimeter);
-        public abstract double GetParameterByArea(double area);
+        protected double _demension;
+        protected double Parameter
+        {
+            get => _demension;
+            set => _demension = (value > 0) ? value : default;
+        }
+        internal abstract double Perimeter { get; }
+        internal abstract double Area { get; }
+        internal abstract double GetParameterByPerimeter(double perimeter);
+        internal abstract double GetParameterByArea(double area);
     }
 }

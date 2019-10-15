@@ -2,28 +2,22 @@
 
 namespace Task4
 {
-    class Square : Figure
+    internal class Square : Figure
     {
-        private double _side;
-        public double Parameter
-        {
-            get => _side;
-            set => _side = (value > 0) ? value : default;
-        }
+        internal override double Perimeter => 4 * _demension;
+        internal override double Area => Math.Pow(_demension, 2);
 
-        public override double Perimeter => 4 * _side;
-        public override double Area => _side * _side;
-
-        public Square(double parameter)
+        internal Square(double parameter)
         {
             Parameter = parameter;
         }
-        public override double GetParameterByPerimeter(double perimeter)
+
+        internal override double GetParameterByPerimeter(double perimeter)
         {
             return perimeter / 4;
         }
 
-        public override double GetParameterByArea(double area)
+        internal override double GetParameterByArea(double area)
         {
             return Math.Sqrt(area);
         }
