@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CustomMath;
+using System;
 
 namespace Task1
 {
@@ -10,6 +7,10 @@ namespace Task1
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine($"Result = {Multiplication.AdditionMultiplication(a, b)}");
+
+            Console.ReadKey();
         }
     }
 }
