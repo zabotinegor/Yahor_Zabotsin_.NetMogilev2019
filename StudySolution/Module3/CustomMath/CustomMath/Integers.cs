@@ -1,4 +1,6 @@
-﻿namespace CustomMath
+﻿using System.Collections.Generic;
+
+namespace CustomMath
 {
     public static class Integers
     {
@@ -27,6 +29,19 @@
             }
 
             return CalcForFibonacci(num - 1) + CalcForFibonacci(num - 2);
+        }
+
+        public static int FlipNumber(int number)
+        {
+            var digitList = new List<int>();
+
+            do
+            {
+                digitList.Add(number % 10);
+                number /= 10;
+            } while (number != 0);
+
+            return 0;
         }
     }
 }
