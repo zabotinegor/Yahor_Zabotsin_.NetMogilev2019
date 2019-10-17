@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CustomMath\CustomMath\CustomMath.csproj">
+      <Project>{1BAF8634-E20F-4771-B840-B09A117F8066}</Project>
+      <Name>CustomMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataInput\DataInput\InputLib.csproj">
+      <Project>{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}</Project>
+      <Name>InputLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

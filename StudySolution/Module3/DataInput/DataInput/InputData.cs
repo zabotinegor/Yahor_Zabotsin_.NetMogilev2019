@@ -58,5 +58,33 @@ namespace InputLib
 
             return result;
         }
+
+        public static bool NatData(string message, out int data)
+        {
+            data = 0;
+            var result = false;
+
+            Console.WriteLine(message);
+
+            if (int.TryParse(Console.ReadLine(), out data))
+            {
+                if (data >= 0)
+                {
+                    result = true;
+                }
+                else
+                {
+                    Console.WriteLine("Number is not natural!");
+                    data = 0;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Wrong data!");
+                data = 0;
+            }
+
+            return result;
+        }
     }
 }
