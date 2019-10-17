@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Module3\Task1\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMath", "Module3\CustomMath\CustomMath\CustomMath.csproj", "{1BAF8634-E20F-4771-B840-B09A117F8066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataInput", "Module3\DataInput\DataInput\DataInput.csproj", "{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputLib", "Module3\DataInput\DataInput\InputLib.csproj", "{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
