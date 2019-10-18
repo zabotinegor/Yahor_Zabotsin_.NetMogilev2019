@@ -1,7 +1,6 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using CustomMath;
+﻿using CustomMath;
 using InputLib;
+using System;
 
 namespace Task5
 {

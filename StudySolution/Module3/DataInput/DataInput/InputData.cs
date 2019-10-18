@@ -86,5 +86,21 @@ namespace InputLib
 
             return result;
         }
+
+        public static bool IntArray(string message, int k, out int[] array)
+        {
+            array = new int[] { };
+            array[k] = default;
+            var result = false;
+
+            Console.WriteLine(message);
+
+            for (var i = 0; i < array.Length; i++)
+            {
+                if (int.TryParse())
+            }
+
+            return result;
+        }
     }
 }
