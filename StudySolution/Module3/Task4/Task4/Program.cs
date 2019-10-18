@@ -1,4 +1,6 @@
-﻿using CustomMath;
+﻿using System;
+using CustomMath;
+using InputLib;
 
 namespace Task4
 {
@@ -6,7 +8,10 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            Integers.FlipNumber(1234);
+            InputData.NatData("Enter your number: ", out var number);
+            Console.WriteLine($"Number after flip: {Integers.FlipNumber(number)}"); 
+            
+            Console.ReadKey();
         }
     }
 }

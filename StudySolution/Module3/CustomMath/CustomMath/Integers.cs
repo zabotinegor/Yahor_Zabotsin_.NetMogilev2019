@@ -34,14 +34,21 @@ namespace CustomMath
         public static int FlipNumber(int number)
         {
             var digitList = new List<int>();
+            var result = 0;
 
             do
             {
                 digitList.Add(number % 10);
                 number /= 10;
             } while (number != 0);
+            
+            foreach (var digit in digitList)
+            {
+                result += digit;
+                result *= 10;
+            }
 
-            return 0;
+            return result / 10;
         }
     }
 }
