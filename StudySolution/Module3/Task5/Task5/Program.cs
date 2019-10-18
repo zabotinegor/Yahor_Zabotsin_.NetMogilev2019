@@ -1,4 +1,7 @@
-﻿using CustomMath;
+﻿using System;
+using System.Runtime.InteropServices;
+using CustomMath;
+using InputLib;
 
 namespace Task5
 {
@@ -6,7 +9,25 @@ namespace Task5
     {
         static void Main(string[] args)
         {
-            Integers.DeleteDigit(11552266, 5);
+            if (InputData.NatData("Enter your number: ", out var num))
+            {
+                if (InputData.NatData("Enter the number to delete: ", out var digit) && digit.IsDigit())
+                {
+                    Console.WriteLine(Integers.DeleteDigit(num, digit, out var newNumber)
+                        ? $"Number after deleting a digit - {newNumber}"
+                        : "There is no given figure");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid digit!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid number!");
+            }
+
+            Console.ReadKey();
         }
     }
 }

@@ -65,20 +65,23 @@ namespace CustomMath
         public static bool DeleteDigit(int number, int digit, out int newNumber)
         {
             var digitList = new List<int>();
-            var newNumber = default;
+            newNumber = default;
 
             do
             {
                 digitList.Add(number % 10);
                 number /= 10;
             } while (number != 0);
-
+            
             foreach (var dig in digitList.Where(dig => dig != digit).Reverse())
             {
                 newNumber += dig;
                 newNumber *= 10;
             }
 
+            newNumber /= 10;
+
+            return digitList.Contains(digit);
         }
     }
 }
