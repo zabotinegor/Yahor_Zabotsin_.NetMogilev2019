@@ -26,8 +26,8 @@ namespace InputLib
 
         public static bool IntData(string message, out int firstData, out int secondData)
         {
-            firstData = 0;
-            secondData = 0;
+            firstData = default;
+            secondData = default;
             var result = false;
 
             Console.WriteLine(message);
@@ -44,16 +44,16 @@ namespace InputLib
                 else
                 {
                     Console.WriteLine("Wrong second one!");
-                    firstData = 0;
-                    secondData = 0;
+                    firstData = default;
+                    secondData = default;
                 }
 
             }
             else
             {
                 Console.WriteLine("Wrong first one!");
-                firstData = 0;
-                secondData = 0;
+                firstData = default;
+                secondData = default;
             }
 
             return result;
@@ -61,7 +61,7 @@ namespace InputLib
 
         public static bool NatData(string message, out int data)
         {
-            data = 0;
+            data = default;
             var result = false;
 
             Console.WriteLine(message);
@@ -75,13 +75,13 @@ namespace InputLib
                 else
                 {
                     Console.WriteLine("Number is not natural!");
-                    data = 0;
+                    data = default;
                 }
             }
             else
             {
                 Console.WriteLine("Wrong data!");
-                data = 0;
+                data = default;
             }
 
             return result;
