@@ -4,6 +4,11 @@ namespace CustomMath
 {
     public static class Integers
     {
+        public static bool IsEven(this int number)
+        {
+            return (number % 2 == 0);
+        }
+
         public static int[] Fibonacci(int n)
         {
             var fibonacci = new int[n] ;

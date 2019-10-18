@@ -8,14 +8,9 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            if (InputData.IntData("Enter multiplier", out var firstOne, out var secondOne))
-            {
-                Console.WriteLine($"Result - {Multiplication.AdditionMultiplication(firstOne, secondOne)}");
-            }
-            else
-            {
-                Console.WriteLine("Invalid multiplier!");
-            }
+            Console.WriteLine(InputData.IntData("Enter multiplier", out var firstOne, out var secondOne)
+                ? $"Result - {Multiplication.AdditionMultiplication(firstOne, secondOne)}"
+                : "Invalid multiplier!");
 
             Console.ReadKey();
         }

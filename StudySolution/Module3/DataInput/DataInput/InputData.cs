@@ -68,7 +68,7 @@ namespace InputLib
 
             if (int.TryParse(Console.ReadLine(), out data))
             {
-                if (data >= 0)
+                if (data > 0)
                 {
                     result = true;
                 }

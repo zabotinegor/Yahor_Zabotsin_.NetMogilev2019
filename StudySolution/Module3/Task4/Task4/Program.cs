@@ -8,9 +8,10 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            InputData.NatData("Enter your number: ", out var number);
-            Console.WriteLine($"Number after flip: {Integers.FlipNumber(number)}"); 
-            
+            Console.WriteLine(InputData.NatData("Enter your number: ", out var number)
+                ? $"Number after flip: {Integers.FlipNumber(number)}"
+                : "Invalid number!");
+
             Console.ReadKey();
         }
     }
