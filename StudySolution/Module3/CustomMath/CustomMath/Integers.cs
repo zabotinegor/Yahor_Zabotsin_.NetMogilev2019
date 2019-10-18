@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CustomMath
 {
@@ -7,6 +8,11 @@ namespace CustomMath
         public static bool IsEven(this int number)
         {
             return (number % 2 == 0);
+        }
+
+        public static bool IsDigit(this int number)
+        {
+            return ((0 <= number) && (number <= 9));
         }
 
         public static int[] Fibonacci(int n)
@@ -54,6 +60,25 @@ namespace CustomMath
             }
 
             return result / 10;
+        }
+
+        public static bool DeleteDigit(int number, int digit, out int newNumber)
+        {
+            var digitList = new List<int>();
+            var newNumber = default;
+
+            do
+            {
+                digitList.Add(number % 10);
+                number /= 10;
+            } while (number != 0);
+
+            foreach (var dig in digitList.Where(dig => dig != digit).Reverse())
+            {
+                newNumber += dig;
+                newNumber *= 10;
+            }
+
         }
     }
 }
