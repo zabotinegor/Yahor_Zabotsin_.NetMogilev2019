@@ -1,4 +1,5 @@
 ﻿using System;
+using CustomMath;
 using InputLib;
 
 namespace Task6
@@ -11,11 +12,18 @@ namespace Task6
             {
                 if (InputData.IntArray($"Enter {size} elemets: ", size, out var array))
                 {
-                    Console.WriteLine("Array after invert: ");
-
-                    foreach (var arr in array)
+                    if (Arrays.Invert(ref array))
                     {
-                        Console.WriteLine($"{arr}");
+                        Console.WriteLine("Array after invert: ");
+
+                        foreach (var arr in array)
+                        {
+                            Console.WriteLine($"{arr}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cannot invert array!");
                     }
                 }
                 else
