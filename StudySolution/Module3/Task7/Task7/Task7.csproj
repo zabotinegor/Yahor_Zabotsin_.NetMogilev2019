@@ -39,11 +39,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\DataInput\DataInput\InputLib.csproj">
-      <Project>{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}</Project>
-      <Name>InputLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
