@@ -29,16 +29,16 @@
                     {
                         switch (side)
                         {
-                            case 0 when x < sizeX - correctX && startNumber <= sum:
+                            case 0 when (x < sizeX - correctX) && (startNumber <= sum):
                                 array[side + correctY, x + correctX] = startNumber++;
                                 break;
-                            case 1 when x < sizeY - correctY && x != 0 && startNumber <= sum:
+                            case 1 when (x < sizeY - correctY) && (x != 0) && (startNumber <= sum):
                                 array[x + correctY, sizeX - 1] = startNumber++;
                                 break;
-                            case 2 when x < sizeX - correctX && x != 0 && startNumber <= sum:
+                            case 2 when (x < sizeX - correctX) && (x != 0) && (startNumber <= sum):
                                 array[sizeY - 1, sizeX - (x + 1)] = startNumber++;
                                 break;
-                            case 3 when x < sizeY - (correctY + 1) && x != 0 && startNumber <= sum:
+                            case 3 when (x < sizeY - (correctY + 1)) && (x != 0) && (startNumber <= sum):
                                 array[sizeY - (x + 1), correctY] = startNumber++;
                                 break;
                         }

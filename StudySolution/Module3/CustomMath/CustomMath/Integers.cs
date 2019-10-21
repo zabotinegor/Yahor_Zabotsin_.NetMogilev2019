@@ -29,17 +29,15 @@ namespace CustomMath
 
         private static int CalcForFibonacci(int num)
         {
-            if (num == 0)
+            switch (num)
             {
-                return 0;
+                case 0:
+                    return 0;
+                case 1:
+                    return 1;
+                default:
+                    return CalcForFibonacci(num - 1) + CalcForFibonacci(num - 2);
             }
-
-            if (num == 1)
-            {
-                return 1;
-            }
-
-            return CalcForFibonacci(num - 1) + CalcForFibonacci(num - 2);
         }
 
         public static int FlipNumber(int number)
