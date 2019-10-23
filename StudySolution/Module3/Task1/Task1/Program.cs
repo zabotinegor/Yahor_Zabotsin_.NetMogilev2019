@@ -1,5 +1,6 @@
 ﻿using CustomMath;
 using System;
+using InputLib;
 
 namespace Task1
 {
@@ -7,8 +8,9 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine($"Result = {Multiplication.AdditionMultiplication(a, b)}");
+            Console.WriteLine(InputData.IntData("Enter multiplier", out var firstOne, out var secondOne)
+                ? $"Result - {Multiplication.AdditionMultiplication(firstOne, secondOne)}"
+                : "Invalid multiplier!");
 
             Console.ReadKey();
         }

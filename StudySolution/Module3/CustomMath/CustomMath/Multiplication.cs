@@ -25,7 +25,6 @@
                     secondMultiplier /= 2;
                 }
             }
-
             else if (firstMultiplier >= 0)
             {
                 while (firstMultiplier != 0)
@@ -39,6 +38,7 @@
                     firstMultiplier /= 2;
                 }
             }
+
             return result;
         }
     }
