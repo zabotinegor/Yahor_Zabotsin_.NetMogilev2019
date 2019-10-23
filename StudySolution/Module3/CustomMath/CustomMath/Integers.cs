@@ -7,15 +7,15 @@ namespace CustomMath
     {
         public static bool IsEven(this int number)
         {
-            return (number % 2 == 0);
+            return number % 2 == 0;
         }
 
         public static bool IsDigit(this int number)
         {
-            return ((0 <= number) && (number <= 9));
+            return (0 <= number) && (number <= 9);
         }
 
-        public static int[] Fibonacci(int n)
+        public static IEnumerable<int> Fibonacci(int n)
         {
             var fibonacci = new int[n] ;
 

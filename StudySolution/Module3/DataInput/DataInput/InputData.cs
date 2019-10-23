@@ -6,7 +6,7 @@ namespace InputLib
     {
         public static bool IntData(string message, out int data)
         {
-            data = 0;
+            data = default;
             var result = false;
 
             Console.WriteLine(message);
@@ -18,7 +18,7 @@ namespace InputLib
             else
             {
                 Console.WriteLine("Wrong data!");
-                data = 0;
+                data = default;
             }
 
             return result;
@@ -96,7 +96,11 @@ namespace InputLib
 
             for (var i = 0; i < array.Length; i++)
             {
-                if (int.TryParse(Console.ReadLine(), out array[i])) continue;
+                if (int.TryParse(Console.ReadLine(), out array[i]))
+                {
+                    continue;
+                }
+
                 result = false;
                 array = default;
                 break;

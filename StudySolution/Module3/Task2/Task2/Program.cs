@@ -16,8 +16,13 @@ namespace Task2
 
             for (var i = 1; count < number; i++)
             {
-                if (!i.IsEven()) continue;
+                if (!i.IsEven())
+                {
+                    continue;
+                }
+
                 Console.WriteLine($"{i}");
+
                 count++;
             }
 

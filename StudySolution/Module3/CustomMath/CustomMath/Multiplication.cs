@@ -38,6 +38,7 @@
                     firstMultiplier /= 2;
                 }
             }
+
             return result;
         }
     }

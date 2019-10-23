@@ -1,10 +1,15 @@
-﻿namespace CustomMath
+﻿using System.Linq;
+
+namespace CustomMath
 {
     public static class Arrays
     {
         public static bool Invert(ref int[] array)
         {
-            if (array == null) return false;
+            if (array == null)
+            {
+                return false;
+            }
 
             for (var i = 0; i < array.Length; i++)
             {

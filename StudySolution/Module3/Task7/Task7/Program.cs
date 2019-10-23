@@ -17,7 +17,6 @@ namespace Task7
 
                     for (var i = 0; i < array.Length; i++)
                     {
-                        
                         if (i == 0)
                         {
                             previosElement = array[i];
@@ -27,6 +26,7 @@ namespace Task7
                         {
                             Console.WriteLine($"{array[i]}");
                         }
+
                         previosElement = array[i];
                     }
                 }

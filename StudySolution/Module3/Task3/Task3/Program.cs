@@ -8,7 +8,7 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            if (InputData.NatData("Enter the number of numbers: ", out var n))
+            if (InputData.NatData("Enter count of numbers: ", out var n))
             {
                 var fibonacci = Integers.Fibonacci(n);
 
