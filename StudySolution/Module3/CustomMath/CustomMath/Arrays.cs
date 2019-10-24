@@ -56,5 +56,16 @@ namespace CustomMath
                 correctX += 1;
             }
         }
+
+        public static T GetMax<T>(this T[] array)
+        {
+            return array.Max();
+        }
+
+        public static T GetMin<T>(this T[] array)
+        {
+            return array.Min();
+        }
+
     }
 }

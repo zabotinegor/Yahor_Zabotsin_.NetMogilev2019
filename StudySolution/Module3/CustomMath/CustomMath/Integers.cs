@@ -81,5 +81,15 @@ namespace CustomMath
 
             return digitList.Contains(digit);
         }
+
+        public static int Sum(int firstNumber, int secondNumber)
+        {
+            return firstNumber + secondNumber;
+        }
+
+        public static int Sum(int firstNumber, int secondNumber, int thirdNumber)
+        {
+            return firstNumber + secondNumber + thirdNumber;
+        }
     }
 }
