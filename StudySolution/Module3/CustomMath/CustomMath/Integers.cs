@@ -82,14 +82,21 @@ namespace CustomMath
             return digitList.Contains(digit);
         }
 
-        public static int Sum(int firstNumber, int secondNumber)
+        public static int Sum(int number1, int number2)
         {
-            return firstNumber + secondNumber;
+            return number1 + number2;
         }
 
-        public static int Sum(int firstNumber, int secondNumber, int thirdNumber)
+        public static int Sum(int number1, int number2, int number3)
         {
-            return firstNumber + secondNumber + thirdNumber;
+            return number1 + number2 + number3;
+        }
+
+        public static void IncreaseBy10(ref int number1, ref int number2, ref int number3)
+        {
+            number1 += 10;
+            number2 += 10;
+            number3 += 10;
         }
     }
 }
