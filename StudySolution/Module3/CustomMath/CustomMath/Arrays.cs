@@ -193,5 +193,17 @@ namespace CustomMath
                 array[i] = (i.IsEven()) ? array[i] + GetMax(array) : array[i] - GetMin(array);
             }
         }
+
+        public static void FillRandom(int n, out int[] array)
+        {
+            array = new int[n];
+
+            var rand = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rand.Next();
+            }
+        }
     }
 }
