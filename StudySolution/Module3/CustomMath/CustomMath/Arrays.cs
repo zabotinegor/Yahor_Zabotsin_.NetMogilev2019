@@ -180,7 +180,7 @@ namespace CustomMath
         {
             return GetMax(array) - GetMin(array);
         }
-        
+
         public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
         {
             if (array == null)
