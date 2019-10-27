@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System;
 
 namespace CustomMath
 {
@@ -57,15 +57,141 @@ namespace CustomMath
             }
         }
 
-        public static T GetMax<T>(this T[] array)
+        public static int GetMax(int[] array)
         {
-            return array.Max();
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var max = array[0];
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+            }
+
+            return max;
         }
 
-        public static T GetMin<T>(this T[] array)
+        public static double GetMax(double[] array)
         {
-            return array.Min();
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var max = array[0];
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                }
+            }
+
+            return max;
         }
 
+        public static double GetMin(double[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var max = array[0];
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] < max)
+                {
+                    max = array[i];
+                }
+            }
+
+            return max;
+        }
+
+        public static int GetMin(int[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var max = array[0];
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] < max)
+                {
+                    max = array[i];
+                }
+            }
+
+            return max;
+        }
+
+        public static int GetSum(int[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var sum = 0;
+
+            foreach (var arr in array)
+            {
+                sum += arr;
+            }
+
+            return sum;
+        }
+
+        public static double GetSum(double[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            double sum = 0;
+
+            foreach (var arr in array)
+            {
+                sum += arr;
+            }
+
+            return sum;
+        }
+
+        public static int GetMinMaxDiff(int[] array)
+        {
+            return GetMax(array) - GetMin(array);
+        }
+
+        public static double GetMinMaxDiff(double[] array)
+        {
+            return GetMax(array) - GetMin(array);
+        }
+        
+        public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            for (var i = 0; i < array.Length; i++)
+            {
+                array[i] = (i.IsEven()) ? array[i] + GetMax(array) : array[i] - GetMin(array);
+            }
+        }
     }
 }
