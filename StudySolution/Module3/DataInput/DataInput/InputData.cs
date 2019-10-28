@@ -87,6 +87,24 @@ namespace InputLib
             return result;
         }
 
+        public static bool NatData(out int data, string inputString)
+        {
+            data = default;
+            var result = false;
+
+            if (int.TryParse(inputString, out data) && (data > 0))
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+                data = default;
+            }
+
+            return result;
+        }
+
         public static bool IntArray(string message, int size, out int[] array)
         {
             array = new int[size];

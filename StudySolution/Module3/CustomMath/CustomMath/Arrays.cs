@@ -181,7 +181,7 @@ namespace CustomMath
             return GetMax(array) - GetMin(array);
         }
 
-        public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
+        public static void IncreaseEvenElementsByMaxOddDecreaseByMin(ref int[] array)
         {
             if (array == null)
             {
@@ -190,19 +190,19 @@ namespace CustomMath
 
             for (var i = 0; i < array.Length; i++)
             {
-                array[i] = (i.IsEven()) ? array[i] + GetMax(array) : array[i] - GetMin(array);
+                array[i] = ((i + 1).IsEven()) ? array[i] + GetMax(array) : array[i] - GetMin(array);
             }
         }
 
-        public static void FillRandom(int n, out int[] array)
+        public static void FillRandom(int n, out int[] array, int min = sbyte.MinValue, int max = sbyte.MaxValue)
         {
             array = new int[n];
 
             var rand = new Random();
 
-            for (int i = 0; i < array.Length; i++)
+            for (var i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next();
+                array[i] = rand.Next(min, max);
             }
         }
     }
