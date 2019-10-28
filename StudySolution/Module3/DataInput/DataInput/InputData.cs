@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace InputLib
 {
@@ -59,6 +60,14 @@ namespace InputLib
             return result;
         }
 
+        public static bool DoubleData(out double data, string inputString)
+        {
+            data = default;
+
+            return (double.TryParse(inputString, NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands,
+                System.Globalization.CultureInfo.InvariantCulture, out data));
+        }
+
         public static bool NatData(string message, out int data)
         {
             data = default;
@@ -90,19 +99,8 @@ namespace InputLib
         public static bool NatData(out int data, string inputString)
         {
             data = default;
-            var result = false;
-
-            if (int.TryParse(inputString, out data) && (data > 0))
-            {
-                result = true;
-            }
-            else
-            {
-                result = false;
-                data = default;
-            }
-
-            return result;
+            
+            return int.TryParse(inputString, out data) && (data > 0);
         }
 
         public static bool IntArray(string message, int size, out int[] array)

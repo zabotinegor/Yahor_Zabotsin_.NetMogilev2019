@@ -1,5 +1,6 @@
 ﻿using System;
 using CustomMath;
+using InputLib;
 
 namespace Task3
 {
@@ -20,7 +21,18 @@ namespace Task3
             Integers.IncreaseBy10(ref intA, ref intB, ref intC);
 
             Console.WriteLine($"Three integers after increase by 10: {intA}, {intB}, {intC}");
+            Console.WriteLine("Enter circle radius: ");
 
+            if (InputData.DoubleData(out var radius, Console.ReadLine()))
+            {
+                Сircle.GetParams(radius, out var perimeter, out var area);
+
+                Console.WriteLine("Circle radius: {0:f4}\nCircle perimeter: {1:f4}\nCircle area: {2:f4}", radius, perimeter, area);
+            }
+            else
+            {
+                Console.WriteLine("Invalid radius!");
+            }
 
             Console.ReadKey();
         }
