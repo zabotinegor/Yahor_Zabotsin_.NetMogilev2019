@@ -39,5 +39,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Module3\CustomMath\CustomMath\CustomMath.csproj">
+      <Project>{1BAF8634-E20F-4771-B840-B09A117F8066}</Project>
+      <Name>CustomMath</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
