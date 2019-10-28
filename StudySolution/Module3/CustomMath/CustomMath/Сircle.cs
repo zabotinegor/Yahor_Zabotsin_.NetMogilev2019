@@ -9,13 +9,47 @@ namespace CustomMath
             perimeter = default;
             area = default;
 
-            if (0 >= radius)
+            if (radius.IsNegativeOrZero())
             {
                 return false;
             }
 
-            perimeter = 2 * Math.PI * radius;
-            area = Math.PI * Math.Pow(radius, 2);
+            perimeter = Perimeter(radius);
+            area = Area(radius);
+
+            return true;
+        }
+
+        private static double Perimeter(double radius)
+        {
+            return 2 * Math.PI * radius;
+        }
+
+        private static double Area(double radius)
+        {
+            return Math.PI * Math.Pow(radius, 2);
+        }
+
+        public static (double perimeter, double area) GetParams(double radius)
+        {
+            if (radius.IsNegativeOrZero())
+            {
+                return (0, 0);
+            }
+
+            return (Perimeter(radius), Area(radius));
+        }
+
+        public static bool GetParams(double radius, out (double perimeter, double area) tuple)
+        {
+            tuple = default;
+
+            if (radius.IsNegativeOrZero())
+            {
+                return false;
+            }
+
+            tuple = (Perimeter(radius), Area(radius));
 
             return true;
         }
