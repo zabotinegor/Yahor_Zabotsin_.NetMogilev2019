@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CustomMath
 {
@@ -198,12 +199,40 @@ namespace CustomMath
         {
             array = new int[n];
 
-            var rand = new Random();
+            var rand = new Random((int) (DateTime.Now.Ticks));
 
             for (var i = 0; i < array.Length; i++)
             {
                 array[i] = rand.Next(min, max);
             }
+        }
+
+        public static IEnumerable<int> Sum(int[] array1, int[] array2)
+        {
+            if ((array1 == null) || (array2 == null))
+            {
+                throw new ArgumentNullException();
+            }
+
+            var newArray = new int[(array1.Length <= array2.Length) ? array2.Length : array1.Length];
+
+            for (var i = 0; i < newArray.Length; i++)
+            {
+                if (i >= array1.Length)
+                {
+                    newArray[i] = array2[i];
+                }
+                else if (i >= array2.Length)
+                {
+                    newArray[i] = array1[i];
+                }
+                else
+                {
+                    newArray[i] = array1[i] + array2[i];
+                }
+            }
+
+            return newArray;
         }
     }
 }
