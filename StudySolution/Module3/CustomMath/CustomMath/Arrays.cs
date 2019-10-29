@@ -20,8 +20,15 @@ namespace CustomMath
             return true;
         }
 
-        public static void FillHelix(int[,] array, int sizeY, int sizeX)
+        public static int[,] FillHelix(int sizeY, int sizeX)
         {
+            if ((!sizeX.IsNatural()) & (!sizeY.IsNatural()))
+            {
+                return null;
+            }
+
+            var array = new int[sizeX, sizeY];
+
             var sum = sizeX * sizeY;
             var correctY = 0;
             var correctX = 0;
@@ -56,6 +63,8 @@ namespace CustomMath
                 correctY += 1;
                 correctX += 1;
             }
+
+            return array;
         }
 
         public static int GetMax(int[] array)
@@ -98,26 +107,6 @@ namespace CustomMath
             return max;
         }
 
-        public static double GetMin(double[] array)
-        {
-            if (array == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            var max = array[0];
-
-            for (var i = 1; i < array.Length; i++)
-            {
-                if (array[i] < max)
-                {
-                    max = array[i];
-                }
-            }
-
-            return max;
-        }
-
         public static int GetMin(int[] array)
         {
             if (array == null)
@@ -125,17 +114,37 @@ namespace CustomMath
                 throw new ArgumentNullException();
             }
 
-            var max = array[0];
+            var min = array[0];
 
             for (var i = 1; i < array.Length; i++)
             {
-                if (array[i] < max)
+                if (array[i] < min)
                 {
-                    max = array[i];
+                    min = array[i];
                 }
             }
 
-            return max;
+            return min;
+        }
+
+        public static double GetMin(double[] array)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var min = array[0];
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                }
+            }
+
+            return min;
         }
 
         public static int GetSum(int[] array)
@@ -195,16 +204,22 @@ namespace CustomMath
             }
         }
 
-        public static void FillRandom(int n, out int[] array, int min = sbyte.MinValue, int max = sbyte.MaxValue)
+        public static IEnumerable<int> FillRandom(int size, int min = sbyte.MinValue, int max = sbyte.MaxValue)
         {
-            array = new int[n];
+            if (!size.IsNatural())
+            {
+                return null;
+            }
 
+            var array = new int[size];
             var rand = new Random((int) (DateTime.Now.Ticks));
 
             for (var i = 0; i < array.Length; i++)
             {
                 array[i] = rand.Next(min, max);
             }
+
+            return array;
         }
 
         public static IEnumerable<int> Sum(int[] array1, int[] array2)
