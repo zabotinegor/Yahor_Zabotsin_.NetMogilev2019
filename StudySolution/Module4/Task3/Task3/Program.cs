@@ -23,7 +23,7 @@ namespace Task3
             Console.WriteLine($"Three integers after increase by 10: {intA}, {intB}, {intC}");
             Console.WriteLine("Enter circle radius:");
 
-            if (InputData.DoubleData(out var radius, Console.ReadLine()))
+            if (InputData.DoubleData(Console.ReadLine(), out var radius))
             {
                 Сircle.GetParams(radius, out var perimeter, out var area);
 
@@ -36,7 +36,7 @@ namespace Task3
 
             Console.WriteLine("Enter size of array:");
 
-            if (InputData.NatData(out var size, Console.ReadLine()))
+            if (InputData.NatData(Console.ReadLine(), out var size))
             {
                 Arrays.FillRandom(size, out var array);
 

@@ -6,99 +6,38 @@ namespace InputLib
 {
     public static class InputData
     {
-        public static bool IntData(string message, out int data)
+        public static bool IntData(string inputString, out int data)
         {
+            if (inputString == null)
+            {
+                throw new ArgumentNullException(nameof(inputString));
+            }
+
             data = default;
-            var result = false;
 
-            Console.WriteLine(message);
-
-            if (int.TryParse(Console.ReadLine(), out data))
-            {
-                result = true;
-            }
-            else
-            {
-                Console.WriteLine("Wrong data!");
-                data = default;
-            }
-
-            return result;
+            return int.TryParse(Console.ReadLine(), out data);
         }
 
-        public static bool IntData(string message, out int firstData, out int secondData)
+        public static bool DoubleData(string inputString, out double data)
         {
-            firstData = default;
-            secondData = default;
-            var result = false;
-
-            Console.WriteLine(message);
-            Console.WriteLine("\nEnter first one!");
-
-            if (int.TryParse(Console.ReadLine(), out firstData))
+            if (inputString == null)
             {
-                Console.WriteLine("Enter second one!");
-
-                if (int.TryParse(Console.ReadLine(), out secondData))
-                {
-                    result = true;
-                }
-                else
-                {
-                    Console.WriteLine("Wrong second one!");
-                    firstData = default;
-                    secondData = default;
-                }
-
-            }
-            else
-            {
-                Console.WriteLine("Wrong first one!");
-                firstData = default;
-                secondData = default;
+                throw new ArgumentNullException(nameof(inputString));
             }
 
-            return result;
-        }
-
-        public static bool DoubleData(out double data, string inputString)
-        {
             data = default;
 
             return (double.TryParse(inputString, NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands,
-                System.Globalization.CultureInfo.InvariantCulture, out data));
+                CultureInfo.InvariantCulture, out data));
         }
 
-        public static bool NatData(string message, out int data)
+        public static bool NatData(string inputString, out int data)
         {
-            data = default;
-            var result = false;
-
-            Console.WriteLine(message);
-
-            if (int.TryParse(Console.ReadLine(), out data))
+            if (inputString == null)
             {
-                if (data > 0)
-                {
-                    result = true;
-                }
-                else
-                {
-                    Console.WriteLine("Number is not natural!");
-                    data = default;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Wrong data!");
-                data = default;
+                throw new ArgumentNullException(nameof(inputString));
             }
 
-            return result;
-        }
-
-        public static bool NatData(out int data, string inputString)
-        {
             data = default;
             
             return int.TryParse(inputString, out data) && data.IsNatural();

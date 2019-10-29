@@ -27,11 +27,11 @@ namespace Task2
             Console.WriteLine($"Sum of two strings via custom method (\"{string1}\", \"{string2}\"): {Strings.Sum(string1, string2)}");
             Console.WriteLine("Enter the size of the first array: ");
 
-            if (InputData.NatData(out var size1, Console.ReadLine()))
+            if (InputData.NatData(Console.ReadLine(), out var size1))
             {
                 Console.WriteLine("Enter the size of the second array: ");
 
-                if (InputData.NatData(out var size2, Console.ReadLine()))
+                if (InputData.NatData(Console.ReadLine(), out var size2))
                 {
                     Arrays.FillRandom(size1, out var array1);
 

@@ -11,7 +11,7 @@ namespace Task1
         {
             Console.WriteLine("Enter the size of the array: ");
 
-            if (InputData.NatData(out var n, Console.ReadLine()))
+            if (InputData.NatData(Console.ReadLine(), out var n))
             {
                 Arrays.FillRandom(n, out var array);
 
