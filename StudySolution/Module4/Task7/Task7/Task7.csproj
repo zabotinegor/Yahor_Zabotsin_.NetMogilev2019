@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80216628-359D-4D2E-B8B3-4CD3564554AA}</ProjectGuid>
+    <ProjectGuid>{417ACE80-648C-4206-8526-D026DF562033}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task5</RootNamespace>
-    <AssemblyName>Task5</AssemblyName>
+    <RootNamespace>Task7</RootNamespace>
+    <AssemblyName>Task7</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\CustomMath\CustomMath\CustomMath.csproj">
-      <Project>{1BAF8634-E20F-4771-B840-B09A117F8066}</Project>
+      <Project>{1baf8634-e20f-4771-b840-b09a117f8066}</Project>
       <Name>CustomMath</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\InputLib\InputLib\InputLib.csproj">

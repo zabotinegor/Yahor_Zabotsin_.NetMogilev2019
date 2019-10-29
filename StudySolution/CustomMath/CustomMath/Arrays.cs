@@ -302,7 +302,7 @@ namespace CustomMath
             return (GetMin(array), GetMax(array), GetSum(array));
         }
 
-        public static IEnumerable<int> IncreaseItemBy5(this int[] array)
+        public static IEnumerable<int> IncreaseItemsBy5(this int[] array)
         {
             if (array == null)
             {
@@ -317,7 +317,7 @@ namespace CustomMath
             return array;
         }
 
-        public static IEnumerable<double> IncreaseItemBy5(this double[] array)
+        public static IEnumerable<double> IncreaseItemsBy5(this double[] array)
         {
             if (array == null)
             {

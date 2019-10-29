@@ -1,15 +1,15 @@
-﻿using CustomMath;
-using System.Linq;
-using static InputLib.InputData;
+﻿using System.Linq;
+using CustomMath;
 using static System.Console;
+using static InputLib.InputData;
 
-namespace Task6
+namespace Task7
 {
     class Program
     {
         static void Main(string[] args)
         {
-            WriteLine("Enter size for array:");
+            WriteLine("Enter size of array:");
 
             if (NatData(ReadLine(), out var size))
             {
@@ -22,12 +22,8 @@ namespace Task6
                     Write($"{arr} ");
                 }
 
-                WriteLine("\nArray after increasing elements by 5:");
 
-                foreach (var arr in array.IncreaseItemsBy5())
-                {
-                    Write($"{arr} ");
-                }
+
             }
             else
             {
