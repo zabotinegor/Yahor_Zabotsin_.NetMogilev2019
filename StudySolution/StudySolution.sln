@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMath", "Module3\CustomMath\CustomMath\CustomMath.csproj", "{1BAF8634-E20F-4771-B840-B09A117F8066}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputLib", "Module3\DataInput\DataInput\InputLib.csproj", "{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module4", "Module4", "{59E41DA3-E8DE-49E1-94C4-EB2EE45B5F35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Module4\Task1\Task1\Task1.csproj", "{5C9524ED-C3C0-4DF6-9511-FFA82788BA4C}"
@@ -17,20 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3", "Module4\Task3\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4", "Module4\Task4\Task4\Task4.csproj", "{B2A2A311-A86A-4124-86FC-BC77CC2A5461}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMath", "CustomMath\CustomMath\CustomMath.csproj", "{1BAF8634-E20F-4771-B840-B09A117F8066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputLib", "InputLib\InputLib\InputLib.csproj", "{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BAF8634-E20F-4771-B840-B09A117F8066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BAF8634-E20F-4771-B840-B09A117F8066}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BAF8634-E20F-4771-B840-B09A117F8066}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BAF8634-E20F-4771-B840-B09A117F8066}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C9524ED-C3C0-4DF6-9511-FFA82788BA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C9524ED-C3C0-4DF6-9511-FFA82788BA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C9524ED-C3C0-4DF6-9511-FFA82788BA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +39,14 @@ Global
 		{B2A2A311-A86A-4124-86FC-BC77CC2A5461}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2A2A311-A86A-4124-86FC-BC77CC2A5461}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2A2A311-A86A-4124-86FC-BC77CC2A5461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAF8634-E20F-4771-B840-B09A117F8066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAF8634-E20F-4771-B840-B09A117F8066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAF8634-E20F-4771-B840-B09A117F8066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAF8634-E20F-4771-B840-B09A117F8066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

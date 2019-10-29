@@ -5,6 +5,13 @@ namespace CustomMath
 {
     public static class Arrays
     {
+        private static Random random;
+
+        static Arrays()
+        {
+            random = new Random((int)(DateTime.Now.Ticks));
+        }
+
         public static bool Invert(int[] array)
         {
             if (array == null)
@@ -212,11 +219,11 @@ namespace CustomMath
             }
 
             var array = new int[size];
-            var rand = new Random((int) (DateTime.Now.Ticks));
+            //var rand = new Random((int) (DateTime.Now.Ticks));
 
             for (var i = 0; i < array.Length; i++)
             {
-                array[i] = rand.Next(min, max);
+                array[i] = random.Next(min, max);
             }
 
             return array;

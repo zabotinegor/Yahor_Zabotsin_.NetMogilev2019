@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CustomMath;
 using InputLib;
 
@@ -33,7 +34,7 @@ namespace Task2
 
                 if (InputData.NatData(Console.ReadLine(), out var size2))
                 {
-                    Arrays.FillRandom(size1, out var array1);
+                    var array1 = Arrays.FillRandom(size1).ToArray();
 
                     Console.WriteLine("First array:");
 
@@ -42,7 +43,7 @@ namespace Task2
                         Console.Write($"{arr} ");
                     }
                     
-                    Arrays.FillRandom(size2, out var array2);
+                    var array2 = Arrays.FillRandom(size2).ToArray();
                     
                     Console.WriteLine("\nSecond array:");
 

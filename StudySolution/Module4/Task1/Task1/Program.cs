@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CustomMath;
+using System;
 using System.Linq;
-using CustomMath;
 using InputLib;
 
 namespace Task1
@@ -13,7 +13,7 @@ namespace Task1
 
             if (InputData.NatData(Console.ReadLine(), out var n))
             {
-                Arrays.FillRandom(n, out var array);
+                var array = Arrays.FillRandom(n).ToArray();
 
                 Console.WriteLine("Source array: ");
 
