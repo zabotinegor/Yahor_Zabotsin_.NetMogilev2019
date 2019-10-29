@@ -32,12 +32,7 @@ namespace CustomMath
 
         public static (double perimeter, double area) GetParams(double radius)
         {
-            if (radius.IsNegativeOrZero())
-            {
-                return (0, 0);
-            }
-
-            return (Perimeter(radius), Area(radius));
+            return radius.IsNegativeOrZero() ? (0, 0) : (Perimeter(radius), Area(radius));
         }
 
         public static bool GetParams(double radius, out (double perimeter, double area) tuple)
