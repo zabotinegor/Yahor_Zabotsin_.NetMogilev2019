@@ -5,11 +5,14 @@ namespace CustomMath
 {
     public static class Arrays
     {
-        private static Random random;
+        private static readonly Random Random;
+
+        public const bool ASC = true;
+        public const bool DESC = false;
 
         static Arrays()
         {
-            random = new Random((int)(DateTime.Now.Ticks));
+            Random = new Random((int)(DateTime.Now.Ticks));
         }
 
         public static bool Invert(int[] array)
@@ -222,7 +225,7 @@ namespace CustomMath
 
             for (var i = 0; i < array.Length; i++)
             {
-                array[i] = random.Next(min, max);
+                array[i] = Random.Next(min, max);
             }
 
             return array;
@@ -330,6 +333,305 @@ namespace CustomMath
             }
 
             return array;
+        }
+
+        public static IEnumerable<int> BubbleSort(this int[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            var len = array.Length;
+
+            for (var i = 1; i < len; i++)
+            {
+                for (var j = 0; j < len - i; j++)
+                {
+                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    {
+                        Swap(ref array[j], ref array[j + 1]);
+                    }
+                }
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<double> BubbleSort(this double[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            var len = array.Length;
+
+            for (var i = 1; i < len; i++)
+            {
+                for (var j = 0; j < len - i; j++)
+                {
+                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    {
+                        Swap(ref array[j], ref array[j + 1]);
+                    }
+                }
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<int> ShakerSort(this int[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            for (var i = 0; i < array.Length / 2; i++)
+            {
+                var swapFlag = false;
+
+                for (var j = i; j < array.Length - i - 1; j++)
+                {
+                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    {
+                        Swap(ref array[j], ref array[j + 1]);
+
+                        swapFlag = true;
+                    }
+                }
+
+                for (var j = array.Length - 2 - i; j > i; j--)
+                {
+                    if (directDirection ? (array[j - 1] > array[j]) : (array[j - 1] < array[j]))
+                    {
+                        Swap(ref array[j - 1], ref array[j]);
+
+                        swapFlag = true;
+                    }
+                }
+
+                if (!swapFlag)
+                {
+                    break;
+                }
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<double> ShakerSort(this double[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            for (var i = 0; i < array.Length / 2; i++)
+            {
+                var swapFlag = false;
+
+                for (var j = i; j < array.Length - i - 1; j++)
+                {
+                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    {
+                        Swap(ref array[j], ref array[j + 1]);
+
+                        swapFlag = true;
+                    }
+                }
+
+                for (var j = array.Length - 2 - i; j > i; j--)
+                {
+                    if (directDirection ? (array[j - 1] > array[j]) : (array[j - 1] < array[j]))
+                    {
+                        Swap(ref array[j - 1], ref array[j]);
+
+                        swapFlag = true;
+                    }
+                }
+
+                if (!swapFlag)
+                {
+                    break;
+                }
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<int> InsertionSort(this int[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                var key = array[i];
+                var j = i;
+
+                while ((j > 1) && (directDirection ? (array[j - 1] > key) : (array[j - 1] < key)))
+                {
+                    Swap(ref array[j - 1], ref array[j]);
+
+                    j--;
+                }
+
+                array[j] = key;
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<double> InsertionSort(this double[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            for (var i = 1; i < array.Length; i++)
+            {
+                var key = array[i];
+                var j = i;
+
+                while ((j > 1) && (directDirection ? (array[j - 1] > key) : (array[j - 1] < key)))
+                {
+                    Swap(ref array[j - 1], ref array[j]);
+
+                    j--;
+                }
+
+                array[j] = key;
+            }
+
+            return array;
+        }
+
+        private static IEnumerable<int> StoogeSort(int[] array, int startIndex, int endIndex, bool directDirection)
+        {
+            if (directDirection ? (array[startIndex] > array[endIndex]) : (array[startIndex] < array[endIndex]))
+            {
+                Swap(ref array[startIndex], ref array[endIndex]);
+            }
+
+            if (endIndex - startIndex > 1)
+            {
+                var len = (endIndex - startIndex + 1) / 3;
+
+                StoogeSort(array, startIndex, endIndex - len, directDirection);
+                StoogeSort(array, startIndex + len, endIndex, directDirection);
+                StoogeSort(array, startIndex, endIndex - len, directDirection);
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<int> StoogeSort(this int[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            return StoogeSort(array, 0, array.Length - 1, directDirection);
+        }
+
+        private static IEnumerable<double> StoogeSort(double[] array, int startIndex, int endIndex, bool directDirection)
+        {
+            if (directDirection ? (array[startIndex] > array[endIndex]) : (array[startIndex] < array[endIndex]))
+            {
+                Swap(ref array[startIndex], ref array[endIndex]);
+            }
+
+            if (endIndex - startIndex > 1)
+            {
+                var len = (endIndex - startIndex + 1) / 3;
+
+                StoogeSort(array, startIndex, endIndex - len, directDirection);
+                StoogeSort(array, startIndex + len, endIndex, directDirection);
+                StoogeSort(array, startIndex, endIndex - len, directDirection);
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<double> StoogeSort(this double[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            return StoogeSort(array, 0, array.Length - 1, directDirection);
+        }
+
+        public static IEnumerable<int> ShellSort(this int[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            var d = array.Length / 2;
+
+            while (d >= 1)
+            {
+                for (var i = d; i < array.Length; i++)
+                {
+                    var j = i;
+
+                    while ((j >= d) && (directDirection ? (array[j - d] > array[j]) : (array[j - d] < array[j])))
+                    {
+                        Swap(ref array[j], ref array[j - d]);
+
+                        j -= d;
+                    }
+                }
+
+                d /= 2;
+            }
+
+            return array;
+        }
+
+        public static IEnumerable<double> ShellSort(this double[] array, bool directDirection = ASC)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            var d = array.Length / 2;
+
+            while (d >= 1)
+            {
+                for (var i = d; i < array.Length; i++)
+                {
+                    var j = i;
+
+                    while ((j >= d) && (directDirection ? (array[j - d] > array[j]) : (array[j - d] < array[j])))
+                    {
+                        Swap(ref array[j], ref array[j - d]);
+
+                        j -= d;
+                    }
+                }
+
+                d /= 2;
+            }
+
+            return array;
+        }
+
+        private static void Swap<T>(ref T item1, ref T item2)
+        {
+            var temp = item1;
+            item1 = item2;
+            item2 = temp;
         }
     }
 }
