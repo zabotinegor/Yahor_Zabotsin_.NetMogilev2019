@@ -21,7 +21,7 @@ namespace Task3
             Integers.IncreaseBy10(ref intA, ref intB, ref intC);
 
             Console.WriteLine($"Three integers after increase by 10: {intA}, {intB}, {intC}");
-            Console.WriteLine("Enter circle radius: ");
+            Console.WriteLine("Enter circle radius:");
 
             if (InputData.DoubleData(out var radius, Console.ReadLine()))
             {
@@ -32,6 +32,28 @@ namespace Task3
             else
             {
                 Console.WriteLine("Invalid radius!");
+            }
+
+            Console.WriteLine("Enter size of array:");
+
+            if (InputData.NatData(out var size, Console.ReadLine()))
+            {
+                Arrays.FillRandom(size, out var array);
+
+                Console.WriteLine("Source array:");
+
+                foreach (var arr in array)
+                {
+                    Console.Write($"{arr} ");
+                }
+
+                Arrays.GetMinMaxSum(array, out var min, out var max, out var sum);
+
+                Console.WriteLine($"\nMin - {min}, Max - {max}, Sum - {sum}.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid size!");
             }
 
             Console.ReadKey();

@@ -15,6 +15,11 @@ namespace CustomMath
             return (0 <= number) && (number <= 9);
         }
 
+        public static bool IsNatural(this int number)
+        {
+            return number > 0;
+        }
+
         public static IEnumerable<int> Fibonacci(int n)
         {
             var fibonacci = new int[n] ;

@@ -31,7 +31,7 @@ namespace Task1
                 Console.WriteLine($"The difference between the maximum and minimum element: {Arrays.GetMinMaxDiff(array)}");
                 Console.WriteLine($"Increase the even elements of the array by the maximum element, the odd decrease by the minimum element: ");
 
-                Arrays.IncreaseEvenElementsByMaxOddDecreaseByMin(ref array);
+                Arrays.IncreaseEvenElementsByMaxOddDecreaseByMin(array);
 
                 foreach (var arr in array)
                 {

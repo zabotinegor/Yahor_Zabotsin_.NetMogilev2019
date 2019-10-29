@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using CustomMath;
 
 namespace InputLib
 {
@@ -100,7 +101,7 @@ namespace InputLib
         {
             data = default;
             
-            return int.TryParse(inputString, out data) && (data > 0);
+            return int.TryParse(inputString, out data) && data.IsNatural();
         }
 
         public static bool IntArray(string message, int size, out int[] array)

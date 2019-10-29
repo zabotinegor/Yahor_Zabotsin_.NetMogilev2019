@@ -5,7 +5,7 @@ namespace CustomMath
 {
     public static class Arrays
     {
-        public static bool Invert(ref int[] array)
+        public static bool Invert(int[] array)
         {
             if (array == null)
             {
@@ -20,7 +20,7 @@ namespace CustomMath
             return true;
         }
 
-        public static void FillHelix(ref int[,] array, int sizeY, int sizeX)
+        public static void FillHelix(int[,] array, int sizeY, int sizeX)
         {
             var sum = sizeX * sizeY;
             var correctY = 0;
@@ -182,7 +182,7 @@ namespace CustomMath
             return GetMax(array) - GetMin(array);
         }
 
-        public static void IncreaseEvenElementsByMaxOddDecreaseByMin(ref int[] array)
+        public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
         {
             if (array == null)
             {
@@ -233,6 +233,42 @@ namespace CustomMath
             }
 
             return newArray;
+        }
+
+        public static bool GetMinMaxSum(int[] array, out int min, out int max, out int sum)
+        {
+            min = default;
+            max = default;
+            sum = default;
+
+            if (array == null)
+            {
+                return false;
+            }
+
+            min = GetMin(array);
+            max = GetMax(array);
+            sum = GetSum(array);
+
+            return true;
+        }
+
+        public static bool GetMinMaxSum(double[] array, out double min, out double max, out double sum)
+        {
+            min = default;
+            max = default;
+            sum = default;
+
+            if (array == null)
+            {
+                return false;
+            }
+
+            min = GetMin(array);
+            max = GetMax(array);
+            sum = GetSum(array);
+
+            return true;
         }
     }
 }
