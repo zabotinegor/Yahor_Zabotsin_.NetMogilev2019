@@ -67,9 +67,15 @@ namespace CustomMath
 
         public static bool DeleteDigit(int number, int digit, out int newNumber)
         {
-            var digitList = new List<int>();
             newNumber = default;
 
+            if (!digit.IsDigit())
+            {
+                return false;
+            }
+
+            var digitList = new List<int>();
+            
             do
             {
                 digitList.Add(number % 10);
