@@ -219,7 +219,6 @@ namespace CustomMath
             }
 
             var array = new int[size];
-            //var rand = new Random((int) (DateTime.Now.Ticks));
 
             for (var i = 0; i < array.Length; i++)
             {
@@ -291,6 +290,16 @@ namespace CustomMath
             sum = GetSum(array);
 
             return true;
+        }
+
+        public static (int min, int max, int sum) GetMinMaxSum(int[] array)
+        {
+            return (GetMin(array), GetMax(array), GetSum(array));
+        }
+
+        public static (double min, double max, double sum) GetMinMaxSum(double[] array)
+        {
+            return (GetMin(array), GetMax(array), GetSum(array));
         }
     }
 }

@@ -109,5 +109,10 @@ namespace CustomMath
             number2 += 10;
             number3 += 10;
         }
+
+        public static (int number1, int number2, int number3) IncreaseBy10(int number1, int number2, int number3)
+        {
+            return (number1 + 10, number2 + 10, number3 + 10);
+        }
     }
 }

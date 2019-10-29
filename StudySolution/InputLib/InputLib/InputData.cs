@@ -27,7 +27,7 @@ namespace InputLib
 
             data = default;
 
-            return (double.TryParse(inputString, NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands,
+            return (double.TryParse(inputString, NumberStyles.AllowDecimalPoint,
                 CultureInfo.InvariantCulture, out data));
         }
 
