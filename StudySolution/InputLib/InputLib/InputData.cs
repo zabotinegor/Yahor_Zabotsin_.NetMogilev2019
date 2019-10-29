@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CustomMath;
+using System;
 using System.Globalization;
-using CustomMath;
 
 namespace InputLib
 {
@@ -39,7 +39,7 @@ namespace InputLib
             }
 
             data = default;
-            
+
             return int.TryParse(inputString, out data) && data.IsNatural();
         }
 

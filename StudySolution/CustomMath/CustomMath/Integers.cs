@@ -22,7 +22,7 @@ namespace CustomMath
 
         public static IEnumerable<int> Fibonacci(int n)
         {
-            var fibonacci = new int[n] ;
+            var fibonacci = new int[n];
 
             for (var i = 0; i < fibonacci.Length; i++)
             {
@@ -55,7 +55,7 @@ namespace CustomMath
                 digitList.Add(number % 10);
                 number /= 10;
             } while (number != 0);
-            
+
             foreach (var digit in digitList)
             {
                 result += digit;
@@ -75,13 +75,13 @@ namespace CustomMath
             }
 
             var digitList = new List<int>();
-            
+
             do
             {
                 digitList.Add(number % 10);
                 number /= 10;
             } while (number != 0);
-            
+
             foreach (var dig in digitList.Where(dig => dig != digit).Reverse())
             {
                 newNumber += dig;
