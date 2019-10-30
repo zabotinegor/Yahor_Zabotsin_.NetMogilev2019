@@ -208,9 +208,12 @@ namespace CustomMath
                 throw new ArgumentNullException();
             }
 
+            var max = GetMax(array);
+            var min = GetMin(array);
+
             for (var i = 0; i < array.Length; i++)
             {
-                array[i] = ((i + 1).IsEven()) ? array[i] + GetMax(array) : array[i] - GetMin(array);
+                array[i] = ((i + 1).IsEven()) ? array[i] + max : array[i] - min;
             }
         }
 
