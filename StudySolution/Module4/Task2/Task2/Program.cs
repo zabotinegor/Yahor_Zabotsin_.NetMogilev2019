@@ -40,7 +40,7 @@ namespace Task2
 
                     foreach (var arr in array1)
                     {
-                        Console.Write($"{arr} ");
+                        Console.Write($"{arr}\t");
                     }
                     
                     var array2 = Arrays.FillRandom(size2).ToArray();
@@ -49,14 +49,14 @@ namespace Task2
 
                     foreach (var arr in array2)
                     {
-                        Console.Write($"{arr} ");
+                        Console.Write($"{arr}\t");
                     }
 
                     Console.WriteLine("\nSum of Arrays:");
 
                     foreach (var arr in Arrays.Sum(array1, array2))
                     {
-                        Console.Write($"{arr} ");
+                        Console.Write($"{arr}\t");
                     }
                 }
                 else
