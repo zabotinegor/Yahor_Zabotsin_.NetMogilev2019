@@ -15,7 +15,7 @@ namespace InputLib
 
             data = default;
 
-            return int.TryParse(Console.ReadLine(), out data);
+            return int.TryParse(inputString, out data);
         }
 
         public static bool DoubleData(string inputString, out double data)

@@ -5,7 +5,7 @@ namespace CustomMath
     public static class Roots
     {
         public delegate double FunctionDelegate(double x);
-        
+
         public static double Root(double a, double b, double eps, FunctionDelegate f)
         {
             if (f(a) * f(b) > 0)
