@@ -34,19 +34,5 @@ namespace CustomMath
         {
             return radius.IsNegativeOrZero() ? (0, 0) : (Perimeter(radius), Area(radius));
         }
-
-        public static bool GetParams(double radius, out (double perimeter, double area) tuple)
-        {
-            tuple = default;
-
-            if (radius.IsNegativeOrZero())
-            {
-                return false;
-            }
-
-            tuple = (Perimeter(radius), Area(radius));
-
-            return true;
-        }
     }
 }
