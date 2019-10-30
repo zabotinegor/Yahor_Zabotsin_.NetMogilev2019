@@ -16,9 +16,9 @@ namespace CustomMath
 
             if (a > b)
             {
-                var t = a;
+                var temp = a;
                 a = b;
-                b = t;
+                b = temp;
             }
             
             while ((b - a) > eps)
@@ -39,6 +39,7 @@ namespace CustomMath
                     a = c;
                 }
             }
+
             return (a + b) / 2;
         }
     }
