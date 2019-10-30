@@ -61,20 +61,65 @@ namespace Task5.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the name of the month or its serial number.
+        ///   Looks up a localized string similar to  days.
         /// </summary>
-        internal static string EnterMonth {
+        internal static string DaysAblative {
             get {
-                return ResourceManager.GetString("EnterMonth", resourceCulture);
+                return ResourceManager.GetString("DaysAblative", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to  days.
         /// </summary>
-        internal static string StringDay {
+        internal static string DaysAccusative {
             get {
-                return ResourceManager.GetString("StringDay", resourceCulture);
+                return ResourceManager.GetString("DaysAccusative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days.
+        /// </summary>
+        internal static string DaysDative {
+            get {
+                return ResourceManager.GetString("DaysDative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days.
+        /// </summary>
+        internal static string DaysGenitive {
+            get {
+                return ResourceManager.GetString("DaysGenitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days.
+        /// </summary>
+        internal static string DaysNominative {
+            get {
+                return ResourceManager.GetString("DaysNominative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  days.
+        /// </summary>
+        internal static string DaysPrepositional {
+            get {
+                return ResourceManager.GetString("DaysPrepositional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the name of the month or its serial number.
+        /// </summary>
+        internal static string MessageEnterMonth {
+            get {
+                return ResourceManager.GetString("MessageEnterMonth", resourceCulture);
             }
         }
     }

@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EnterMonth" xml:space="preserve">
+  <data name="MessageEnterMonth" xml:space="preserve">
     <value>Введите название месяца или его порядковый номер</value>
   </data>
-  <data name="StringDay" xml:space="preserve">
+  <data name="DaysNominative" xml:space="preserve">
+    <value> дни</value>
+  </data>
+  <data name="DaysGenitive" xml:space="preserve">
     <value> дней</value>
+  </data>
+  <data name="DaysDative" xml:space="preserve">
+    <value> дням</value>
+  </data>
+  <data name="DaysAccusative" xml:space="preserve">
+    <value> дни</value>
+  </data>
+  <data name="DaysAblative" xml:space="preserve">
+    <value> днями</value>
+  </data>
+  <data name="DaysPrepositional" xml:space="preserve">
+    <value> днях</value>
   </data>
 </root>
