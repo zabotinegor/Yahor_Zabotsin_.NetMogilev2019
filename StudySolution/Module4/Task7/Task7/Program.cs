@@ -17,85 +17,97 @@ namespace Task7
             {
                 var array = Arrays.FillRandom(size).ToArray();
 
-                {
-                    WriteLine("\nSource array:");
+                WriteLine("\nSource array:");
 
-                    DisplayArray(array);
-                }
+                DisplayArray(array);
 
-                {
-                    WriteLine("\nSorting array via LINQ:");
+                #region LINQ_Sort
 
-                    DisplayArray(array.OrderBy(arr => arr));
+                WriteLine("\nSorting array via LINQ:");
 
-                    WriteLine("\nSorting reverse array via LINQ:");
+                DisplayArray(array.OrderBy(arr => arr));
 
-                    DisplayArray(array.OrderByDescending(arr => arr));
-                }
+                WriteLine("\nSorting reverse array via LINQ:");
 
-                {
-                    WriteLine("\nSorting array via Array.Sort()");
+                DisplayArray(array.OrderByDescending(arr => arr));
 
-                    Array.Sort(array);
+                #endregion
 
-                    DisplayArray(array);
+                #region Array_Sort
 
-                    WriteLine("\nSorting reverse array via Array.Sort()");
+                WriteLine("\nSorting array via Array.Sort()");
 
-                    Array.Sort(array, (x, y) => -x.CompareTo(y));
+                Array.Sort(array);
 
-                    DisplayArray(array);
-                }
+                DisplayArray(array);
 
-                {
-                    WriteLine("\nSorting array via Arrays.BubbleSort()");
+                WriteLine("\nSorting reverse array via Array.Sort()");
 
-                    DisplayArray(array.BubbleSort());
+                Array.Sort(array, (x, y) => -x.CompareTo(y));
 
-                    WriteLine("\nSorting reverse array via Arrays.BubbleSort()");
+                DisplayArray(array);
 
-                    DisplayArray(array.BubbleSort(Arrays.DESC));
-                }
+                #endregion
 
-                {
-                    WriteLine("\nSorting array via Arrays.ShakerSort()");
+                #region Bubble_Sort
 
-                    DisplayArray(array.ShakerSort());
+                WriteLine("\nSorting array via Arrays.BubbleSort()");
 
-                    WriteLine("\nSorting reverse array via Arrays.ShakerSort()");
+                DisplayArray(array.BubbleSort());
 
-                    DisplayArray(array.ShakerSort(Arrays.DESC));
-                }
+                WriteLine("\nSorting reverse array via Arrays.BubbleSort()");
 
-                {
-                    WriteLine("\nSorting array via Arrays.InsertionSort()");
 
-                    DisplayArray(array.InsertionSort());
+                DisplayArray(array.BubbleSort(Arrays.DESC));
+                #endregion
 
-                    WriteLine("\nSorting reverse array via Arrays.InsertionSort()");
+                #region Shaker_Sort
 
-                    DisplayArray(array.InsertionSort(Arrays.DESC));
-                }
+                WriteLine("\nSorting array via Arrays.ShakerSort()");
 
-                {
-                    WriteLine("\nSorting array via Arrays.StoogeSort()");
+                DisplayArray(array.ShakerSort());
 
-                    DisplayArray(array.StoogeSort());
+                WriteLine("\nSorting reverse array via Arrays.ShakerSort()");
 
-                    WriteLine("\nSorting reverse array via Arrays.StoogeSort()");
+                DisplayArray(array.ShakerSort(Arrays.DESC));
 
-                    DisplayArray(array.StoogeSort(Arrays.DESC));
-                }
+                #endregion
 
-                {
-                    WriteLine("\nSorting array via Arrays.ShellSort()");
+                #region Insert_Sort
 
-                    DisplayArray(array.ShellSort());
+                WriteLine("\nSorting array via Arrays.InsertionSort()");
 
-                    WriteLine("\nSorting reverse array via Arrays.ShellSort()");
+                DisplayArray(array.InsertionSort());
 
-                    DisplayArray(array.ShellSort(Arrays.DESC));
-                }
+                WriteLine("\nSorting reverse array via Arrays.InsertionSort()");
+
+                DisplayArray(array.InsertionSort(Arrays.DESC));
+
+                #endregion
+
+                #region Stooge_Sort
+
+                WriteLine("\nSorting array via Arrays.StoogeSort()");
+
+                DisplayArray(array.StoogeSort());
+
+                WriteLine("\nSorting reverse array via Arrays.StoogeSort()");
+
+                DisplayArray(array.StoogeSort(Arrays.DESC));
+
+                #endregion
+
+                #region Shell_Sort
+
+                WriteLine("\nSorting array via Arrays.ShellSort()");
+
+                DisplayArray(array.ShellSort());
+
+                WriteLine("\nSorting reverse array via Arrays.ShellSort()");
+
+                DisplayArray(array.ShellSort(Arrays.DESC));
+
+                #endregion
 
             }
             else
