@@ -58,7 +58,7 @@ namespace Task7
                 WriteLine("\nSorting reverse array via Arrays.BubbleSort()");
 
 
-                DisplayArray(array.BubbleSort(Arrays.DESC));
+                DisplayArray(array.BubbleSort(Direction.Desc));
                 #endregion
 
                 #region Shaker_Sort
@@ -69,22 +69,10 @@ namespace Task7
 
                 WriteLine("\nSorting reverse array via Arrays.ShakerSort()");
 
-                DisplayArray(array.ShakerSort(Arrays.DESC));
+                DisplayArray(array.ShakerSort(Direction.Desc));
 
                 #endregion
-
-                #region Insert_Sort
-
-                WriteLine("\nSorting array via Arrays.InsertionSort()");
-
-                DisplayArray(array.InsertionSort());
-
-                WriteLine("\nSorting reverse array via Arrays.InsertionSort()");
-
-                DisplayArray(array.InsertionSort(Arrays.DESC));
-
-                #endregion
-
+                
                 #region Stooge_Sort
 
                 WriteLine("\nSorting array via Arrays.StoogeSort()");
@@ -93,7 +81,7 @@ namespace Task7
 
                 WriteLine("\nSorting reverse array via Arrays.StoogeSort()");
 
-                DisplayArray(array.StoogeSort(Arrays.DESC));
+                DisplayArray(array.StoogeSort(Direction.Desc));
 
                 #endregion
 
@@ -105,7 +93,7 @@ namespace Task7
 
                 WriteLine("\nSorting reverse array via Arrays.ShellSort()");
 
-                DisplayArray(array.ShellSort(Arrays.DESC));
+                DisplayArray(array.ShellSort(Direction.Desc));
 
                 #endregion
 

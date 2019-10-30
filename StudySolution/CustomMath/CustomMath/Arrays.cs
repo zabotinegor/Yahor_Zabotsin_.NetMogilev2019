@@ -3,12 +3,15 @@ using System.Collections.Generic;
 
 namespace CustomMath
 {
+    public enum Direction
+    {
+        Asc,
+        Desc
+    }
+
     public static class Arrays
     {
         private static readonly Random Random;
-
-        public const bool ASC = true;
-        public const bool DESC = false;
 
         static Arrays()
         {
@@ -176,7 +179,7 @@ namespace CustomMath
             return array;
         }
         
-        public static IEnumerable<int> BubbleSort(this int[] array, bool directDirection = ASC)
+        public static IEnumerable<int> BubbleSort(this int[] array, Direction directDirection = Direction.Asc)
         {
             if (array == null)
             {
@@ -189,7 +192,7 @@ namespace CustomMath
             {
                 for (var j = 0; j < len - i; j++)
                 {
-                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    if ((directDirection == Direction.Asc) ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
                     {
                         Swap(ref array[j], ref array[j + 1]);
                     }
@@ -199,7 +202,7 @@ namespace CustomMath
             return array;
         }
         
-        public static IEnumerable<int> ShakerSort(this int[] array, bool directDirection = ASC)
+        public static IEnumerable<int> ShakerSort(this int[] array, Direction directDirection = Direction.Asc)
         {
             if (array == null)
             {
@@ -212,7 +215,7 @@ namespace CustomMath
 
                 for (var j = i; j < array.Length - i - 1; j++)
                 {
-                    if (directDirection ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
+                    if ((directDirection == Direction.Asc) ? (array[j] > array[j + 1]) : (array[j] < array[j + 1]))
                     {
                         Swap(ref array[j], ref array[j + 1]);
 
@@ -222,7 +225,7 @@ namespace CustomMath
 
                 for (var j = array.Length - 2 - i; j > i; j--)
                 {
-                    if (directDirection ? (array[j - 1] > array[j]) : (array[j - 1] < array[j]))
+                    if ((directDirection == Direction.Asc) ? (array[j - 1] > array[j]) : (array[j - 1] < array[j]))
                     {
                         Swap(ref array[j - 1], ref array[j]);
 
@@ -239,34 +242,9 @@ namespace CustomMath
             return array;
         }
         
-        public static IEnumerable<int> InsertionSort(this int[] array, bool directDirection = ASC)
+        private static IEnumerable<int> StoogeSort(int[] array, int startIndex, int endIndex, Direction directDirection = Direction.Asc)
         {
-            if (array == null)
-            {
-                throw new ArgumentNullException(nameof(array));
-            }
-
-            for (var i = 1; i < array.Length; i++)
-            {
-                var key = array[i];
-                var j = i;
-
-                while ((j > 1) && (directDirection ? (array[j - 1] > key) : (array[j - 1] < key)))
-                {
-                    Swap(ref array[j - 1], ref array[j]);
-
-                    j--;
-                }
-
-                array[j] = key;
-            }
-
-            return array;
-        }
-
-        private static IEnumerable<int> StoogeSort(int[] array, int startIndex, int endIndex, bool directDirection)
-        {
-            if (directDirection ? (array[startIndex] > array[endIndex]) : (array[startIndex] < array[endIndex]))
+            if ((directDirection == Direction.Asc) ? (array[startIndex] > array[endIndex]) : (array[startIndex] < array[endIndex]))
             {
                 Swap(ref array[startIndex], ref array[endIndex]);
             }
@@ -283,7 +261,7 @@ namespace CustomMath
             return array;
         }
 
-        public static IEnumerable<int> StoogeSort(this int[] array, bool directDirection = ASC)
+        public static IEnumerable<int> StoogeSort(this int[] array, Direction directDirection = Direction.Asc)
         {
             if (array == null)
             {
@@ -293,7 +271,7 @@ namespace CustomMath
             return StoogeSort(array, 0, array.Length - 1, directDirection);
         }
         
-        public static IEnumerable<int> ShellSort(this int[] array, bool directDirection = ASC)
+        public static IEnumerable<int> ShellSort(this int[] array, Direction directDirection = Direction.Asc)
         {
             if (array == null)
             {
@@ -308,7 +286,7 @@ namespace CustomMath
                 {
                     var j = i;
 
-                    while ((j >= d) && (directDirection ? (array[j - d] > array[j]) : (array[j - d] < array[j])))
+                    while ((j >= d) && ((directDirection == Direction.Asc) ? (array[j - d] > array[j]) : (array[j - d] < array[j])))
                     {
                         Swap(ref array[j], ref array[j - d]);
 
