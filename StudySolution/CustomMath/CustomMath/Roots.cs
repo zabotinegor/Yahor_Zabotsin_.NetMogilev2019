@@ -12,35 +12,17 @@ namespace CustomMath
             {
                 throw new Exception("Perhaps the roots on this segment do not exist");
             }
-            
 
-            if (a > b)
+            if (Math.Abs(b - a) < eps)
             {
-                var temp = a;
-                a = b;
-                b = temp;
+                return (a + b) / 2;
             }
-            
-            while ((b - a) > eps)
+            else
             {
                 var c = (a + b) / 2;
 
-                if (f(c) == 0)
-                {
-                    return c;
-                }
-
-                if (f(a) * f(c) < 0)
-                {
-                    b = c;
-                }
-                else
-                {
-                    a = c;
-                }
+                return (f(a) * f(c) <= 0) ? Root(a, c, eps, f) : Root(c, b, eps, f);
             }
-
-            return (a + b) / 2;
         }
     }
 }
