@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using CustomMath;
 using InputLib;
 using messages = Task5.Resources.Messages;
 
@@ -15,9 +16,17 @@ namespace Task5
 
             var stringBuffer = Console.ReadLine();
 
-            if (InputData.IntData(stringBuffer, out var month) && (month > 0) && (month <= 12))
+            if (InputData.IntData(stringBuffer, out var month))
             {
-                Console.WriteLine($@"{dtfi?.MonthNames[month - 1]}, {DateTime.DaysInMonth(2019, month)} {messages.DaysGenitive}");
+                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, month, out var monthName, out var daysInMonth)
+                    ? $@"{monthName}, {daysInMonth} {messages.DaysGenitive}"
+                    : messages.MessageWrongMonthNumber);
+            }
+            else
+            {
+                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, stringBuffer, out var days)
+                    ? $@"{stringBuffer.StartWithСap()}, {days} {messages.DaysGenitive}"
+                    : messages.MessageWrongMonthName);
             }
 
             Console.ReadKey();

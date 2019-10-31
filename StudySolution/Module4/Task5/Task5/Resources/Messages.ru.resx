@@ -138,4 +138,10 @@
   <data name="DaysPrepositional" xml:space="preserve">
     <value> днях</value>
   </data>
+  <data name="MessageWrongMonthName" xml:space="preserve">
+    <value>Неверное название месяца!</value>
+  </data>
+  <data name="MessageWrongMonthNumber" xml:space="preserve">
+    <value>Неверный номер месяца!</value>
+  </data>
 </root>

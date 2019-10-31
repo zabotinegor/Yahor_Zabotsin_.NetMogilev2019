@@ -122,5 +122,23 @@ namespace Task5.Resources {
                 return ResourceManager.GetString("MessageEnterMonth", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong month name!.
+        /// </summary>
+        internal static string MessageWrongMonthName {
+            get {
+                return ResourceManager.GetString("MessageWrongMonthName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong month number!.
+        /// </summary>
+        internal static string MessageWrongMonthNumber {
+            get {
+                return ResourceManager.GetString("MessageWrongMonthNumber", resourceCulture);
+            }
+        }
     }
 }
