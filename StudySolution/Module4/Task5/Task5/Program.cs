@@ -19,20 +19,20 @@ namespace Task5_2
             if (InputData.IntData(stringBuffer, out var month))
             {
                 Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, month, out var monthName, out var daysInMonth)
-                    ? $@"{monthName}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
+                    ? $@"{monthName}, {daysInMonth} {MatchingDaysWithNumerals(daysInMonth)}"
                     : MessageWrongMonthNumber);
             }
             else
             {
                 Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, stringBuffer, out var daysInMonth)
-                    ? $@"{stringBuffer.StartWithСap()}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
+                    ? $@"{stringBuffer.StartWithСap()}, {daysInMonth} {MatchingDaysWithNumerals(daysInMonth)}"
                     : MessageWrongMonthName);
             }
 
             Console.ReadKey();
         }
 
-        private static string MatchingDaysWithWumerals(int days)
+        private static string MatchingDaysWithNumerals(int days)
         {
             if ((2 <= days) && (days < 5))
             {
