@@ -18,9 +18,14 @@ namespace CustomMath
             Random = new Random((int)(DateTime.Now.Ticks));
         }
 
+        public static bool IsNullOrEmpty<T>(this T[] array)
+        {
+            return (array == null) || (array.Length == 0);
+        }
+
         public static int GetMax(int[] array)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException();
             }
@@ -40,7 +45,7 @@ namespace CustomMath
         
         public static int GetMin(int[] array)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException();
             }
@@ -60,7 +65,7 @@ namespace CustomMath
         
         public static int GetSum(int[] array)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException();
             }
@@ -82,7 +87,7 @@ namespace CustomMath
 
         public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException();
             }
@@ -96,7 +101,7 @@ namespace CustomMath
             }
         }
 
-        public static IEnumerable<int> FillRandom(int size, int min = sbyte.MinValue, int max = sbyte.MaxValue)
+        public static IEnumerable<int> FillRandomInt(int size, int min = sbyte.MinValue, int max = sbyte.MaxValue)
         {
             if (!size.IsNatural())
             {
@@ -115,7 +120,7 @@ namespace CustomMath
 
         public static IEnumerable<int> Sum(int[] array1, int[] array2)
         {
-            if ((array1 == null) || (array2 == null))
+            if (array1.IsNullOrEmpty() || array2.IsNullOrEmpty())
             {
                 throw new ArgumentNullException();
             }
@@ -147,7 +152,7 @@ namespace CustomMath
             max = default;
             sum = default;
 
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 return false;
             }
@@ -166,7 +171,7 @@ namespace CustomMath
         
         public static IEnumerable<int> IncreaseItemsBy5(this int[] array)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException(nameof(array));
             }
@@ -181,7 +186,7 @@ namespace CustomMath
         
         public static IEnumerable<int> BubbleSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException(nameof(array));
             }
@@ -204,7 +209,7 @@ namespace CustomMath
         
         public static IEnumerable<int> ShakerSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException(nameof(array));
             }
@@ -263,7 +268,7 @@ namespace CustomMath
 
         public static IEnumerable<int> StoogeSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException(nameof(array));
             }
@@ -273,7 +278,7 @@ namespace CustomMath
         
         public static IEnumerable<int> ShellSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array == null)
+            if (array.IsNullOrEmpty())
             {
                 throw new ArgumentNullException(nameof(array));
             }

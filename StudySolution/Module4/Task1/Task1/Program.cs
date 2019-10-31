@@ -13,7 +13,7 @@ namespace Task1
 
             if (InputData.NatData(Console.ReadLine(), out var n))
             {
-                var array = Arrays.FillRandom(n).ToArray();
+                var array = Arrays.FillRandomInt(n).ToArray();
 
                 Console.WriteLine("Source array: ");
 

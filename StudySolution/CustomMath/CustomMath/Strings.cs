@@ -6,7 +6,7 @@ namespace CustomMath
     {
         public static string Sum(string str1, string str2)
         {
-            return str1 + str2;
+            return string.Concat(str1, str2);
         }
 
         public static string StartWithСap(this string str)
@@ -16,7 +16,7 @@ namespace CustomMath
                 throw new ArgumentNullException(nameof(str));
             }
 
-            return str.Substring(0, 1).ToUpper() + str.Remove(0, 1).ToLower();
+            return string.Concat(str.Substring(0, 1).ToUpper(), str.Remove(0, 1).ToLower());
         }
     }
 }

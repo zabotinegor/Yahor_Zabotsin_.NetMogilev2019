@@ -2,7 +2,7 @@
 
 namespace CustomMath
 {
-    public static class Сircle
+    public static class CustomСircle
     {
         public static bool GetParams(double radius, out double perimeter, out double area)
         {

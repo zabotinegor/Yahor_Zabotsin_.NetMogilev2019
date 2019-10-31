@@ -34,7 +34,7 @@ namespace Task2
 
                 if (InputData.NatData(Console.ReadLine(), out var size2))
                 {
-                    var array1 = Arrays.FillRandom(size1).ToArray();
+                    var array1 = Arrays.FillRandomInt(size1).ToArray();
 
                     Console.WriteLine("First array:");
 
@@ -43,7 +43,7 @@ namespace Task2
                         Console.Write($"{arr}\t");
                     }
                     
-                    var array2 = Arrays.FillRandom(size2).ToArray();
+                    var array2 = Arrays.FillRandomInt(size2).ToArray();
                     
                     Console.WriteLine("\nSecond array:");
 

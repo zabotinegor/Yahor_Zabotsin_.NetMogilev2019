@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace CustomMath
+﻿namespace CustomMath
 {
     public static class Integers
     {

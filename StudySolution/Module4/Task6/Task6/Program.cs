@@ -13,7 +13,7 @@ namespace Task6
 
             if (NatData(ReadLine(), out var size))
             {
-                var array = Arrays.FillRandom(size).ToArray();
+                var array = Arrays.FillRandomInt(size).ToArray();
 
                 WriteLine("Source array:");
 

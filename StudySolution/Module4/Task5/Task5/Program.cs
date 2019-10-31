@@ -10,7 +10,7 @@ namespace Task5_2
     {
         static void Main(string[] args)
         {
-            var dtfi = DateTimeFormatInfo.CurrentInfo;
+            var dateTimeFormatInfo = DateTimeFormatInfo.CurrentInfo;
 
             Console.WriteLine(MessageEnterMonth);
 
@@ -18,13 +18,13 @@ namespace Task5_2
 
             if (InputData.IntData(stringBuffer, out var month))
             {
-                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, month, out var monthName, out var daysInMonth)
+                Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, month, out var monthName, out var daysInMonth)
                     ? $@"{monthName}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
                     : MessageWrongMonthNumber);
             }
             else
             {
-                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, stringBuffer, out var daysInMonth)
+                Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, stringBuffer, out var daysInMonth)
                     ? $@"{stringBuffer.StartWithСap()}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
                     : MessageWrongMonthName);
             }

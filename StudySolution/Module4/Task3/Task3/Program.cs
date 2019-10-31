@@ -26,7 +26,7 @@ namespace Task3
 
             if (InputData.DoubleData(Console.ReadLine(), out var radius))
             {
-                Сircle.GetParams(radius, out var perimeter, out var area);
+                CustomСircle.GetParams(radius, out var perimeter, out var area);
 
                 Console.WriteLine("Circle radius: {0:f4}\nCircle perimeter: {1:f4}\nCircle area: {2:f4}", radius, perimeter, area);
             }
@@ -39,7 +39,7 @@ namespace Task3
 
             if (InputData.NatData(Console.ReadLine(), out var size))
             {
-                var array = Arrays.FillRandom(size).ToArray();
+                var array = Arrays.FillRandomInt(size).ToArray();
 
                 Console.WriteLine("Source array:");
 
