@@ -21,11 +21,15 @@ namespace Task2
 
             Console.WriteLine($"The sum of three integers via the addition operator ({intA}, {intB}, {intC}): {intA + intB + intC}");
             Console.WriteLine($"The sum of three integers via custom method ({intA}, {intB}, {intC}): {Integers.Sum(intA, intB, intC)}");
+
             Console.WriteLine($"The sum of two integers via the addition operator ({intA}, {intB}): {intA + intB}");
             Console.WriteLine($"The sum of two integers via custom method ({intA}, {intB}): {Integers.Sum(intA, intB)}");
+
             Console.WriteLine("The sum of three fractional numbers via the addition operator ({0:f4}, {1:f4}, {2:f4}): {3:f4}", doubleA, doubleB, doubleC, doubleA + doubleB + doubleC);
             Console.WriteLine("The sum of three fractional numbers via custom method ({0:f4}, {1:f4}, {2:f4}): {3:f4}", doubleA, doubleB, doubleC, Doubles.Sum(doubleA, doubleB, doubleC));
+
             Console.WriteLine($"Sum of two strings via custom method (\"{string1}\", \"{string2}\"): {Strings.Sum(string1, string2)}");
+
             Console.WriteLine("Enter the size of the first array: ");
 
             if (InputData.NatData(Console.ReadLine(), out var size1))

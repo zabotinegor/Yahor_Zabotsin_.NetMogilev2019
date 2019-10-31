@@ -18,17 +18,14 @@ namespace Task7
                 var array = Arrays.FillRandomInt(size).ToArray();
 
                 WriteLine("\nSource array:");
-
                 DisplayArray(array);
 
                 #region LINQ_Sort
 
                 WriteLine("\nSorting array via LINQ:");
-
                 DisplayArray(array.OrderBy(arr => arr));
 
                 WriteLine("\nSorting reverse array via LINQ:");
-
                 DisplayArray(array.OrderByDescending(arr => arr));
 
                 #endregion
@@ -36,15 +33,11 @@ namespace Task7
                 #region Array_Sort
 
                 WriteLine("\nSorting array via Array.Sort()");
-
                 Array.Sort(array);
-
                 DisplayArray(array);
 
                 WriteLine("\nSorting reverse array via Array.Sort()");
-
                 Array.Sort(array, (x, y) => -x.CompareTo(y));
-
                 DisplayArray(array);
 
                 #endregion
@@ -52,51 +45,22 @@ namespace Task7
                 #region Bubble_Sort
 
                 WriteLine("\nSorting array via Arrays.BubbleSort()");
-
                 DisplayArray(array.BubbleSort());
 
                 WriteLine("\nSorting reverse array via Arrays.BubbleSort()");
-
-
                 DisplayArray(array.BubbleSort(Direction.Desc));
                 #endregion
 
                 #region Shaker_Sort
 
                 WriteLine("\nSorting array via Arrays.ShakerSort()");
-
                 DisplayArray(array.ShakerSort());
 
                 WriteLine("\nSorting reverse array via Arrays.ShakerSort()");
-
                 DisplayArray(array.ShakerSort(Direction.Desc));
 
                 #endregion
                 
-                #region Stooge_Sort
-
-                WriteLine("\nSorting array via Arrays.StoogeSort()");
-
-                DisplayArray(array.StoogeSort());
-
-                WriteLine("\nSorting reverse array via Arrays.StoogeSort()");
-
-                DisplayArray(array.StoogeSort(Direction.Desc));
-
-                #endregion
-
-                #region Shell_Sort
-
-                WriteLine("\nSorting array via Arrays.ShellSort()");
-
-                DisplayArray(array.ShellSort());
-
-                WriteLine("\nSorting reverse array via Arrays.ShellSort()");
-
-                DisplayArray(array.ShellSort(Direction.Desc));
-
-                #endregion
-
             }
             else
             {

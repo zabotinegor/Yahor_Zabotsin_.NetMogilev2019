@@ -19,6 +19,7 @@ namespace Task4
             var numbers = Integers.IncreaseBy10(intA, intB, intC);
 
             Console.WriteLine($"Numbers after increasing by 10: {numbers.number1}, {numbers.number2}, {numbers.number3}");
+
             Console.WriteLine("Enter radius:");
 
             if (InputData.DoubleData(Console.ReadLine(), out var radius))

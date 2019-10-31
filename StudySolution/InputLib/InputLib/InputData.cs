@@ -8,20 +8,14 @@ namespace InputLib
     {
         public static bool IntData(string inputString, out int data)
         {
-            if (string.IsNullOrEmpty(inputString))
-            {
-                throw new ArgumentNullException(nameof(inputString));
-            }
+            CheckString(inputString);
 
             return int.TryParse(inputString, out data);
         }
 
         public static bool DoubleData(string inputString, out double data)
         {
-            if (string.IsNullOrEmpty(inputString))
-            {
-                throw new ArgumentNullException(nameof(inputString));
-            }
+            CheckString(inputString);
 
             return (double.TryParse(inputString, NumberStyles.AllowDecimalPoint,
                 CultureInfo.InvariantCulture, out data));
@@ -29,12 +23,17 @@ namespace InputLib
 
         public static bool NatData(string inputString, out int data)
         {
-            if (string.IsNullOrEmpty(inputString))
-            {
-                throw new ArgumentNullException(nameof(inputString));
-            }
+            CheckString(inputString);
 
             return int.TryParse(inputString, out data) && data.IsNatural();
+        }
+
+        private static void CheckString(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
         }
     }
 }

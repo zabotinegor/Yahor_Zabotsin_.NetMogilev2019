@@ -2,7 +2,6 @@
 using InputLib;
 using System;
 using System.Globalization;
-using static Task5_2.Resources.Messages;
 
 namespace Task5_2
 {
@@ -12,7 +11,7 @@ namespace Task5_2
         {
             var dateTimeFormatInfo = DateTimeFormatInfo.CurrentInfo;
 
-            Console.WriteLine(MessageEnterMonth);
+            Console.WriteLine(Resources.Messages.MessageEnterMonth);
 
             var stringBuffer = Console.ReadLine();
 
@@ -20,13 +19,13 @@ namespace Task5_2
             {
                 Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, month, out var monthName, out var daysInMonth)
                     ? $@"{monthName}, {daysInMonth} {MatchingDaysWithNumerals(daysInMonth)}"
-                    : MessageWrongMonthNumber);
+                    : Resources.Messages.MessageWrongMonthNumber);
             }
             else
             {
                 Console.WriteLine(Calendars.GetDaysInMonth(dateTimeFormatInfo, stringBuffer, out var daysInMonth)
                     ? $@"{stringBuffer.StartWithСap()}, {daysInMonth} {MatchingDaysWithNumerals(daysInMonth)}"
-                    : MessageWrongMonthName);
+                    : Resources.Messages.MessageWrongMonthName);
             }
 
             Console.ReadKey();
@@ -36,26 +35,26 @@ namespace Task5_2
         {
             if ((2 <= days) && (days < 5))
             {
-                return DayGenitive;
+                return Resources.Messages.DayGenitive;
             }
             else if ((5 <= days) && (days < 20))
             {
-                return DaysGenitive;
+                return Resources.Messages.DaysGenitive;
             }
             else switch (days % 10)
             {
                 case 0:
-                    return DaysGenitive;
+                    return Resources.Messages.DaysGenitive;
                 case 1:
-                    return DayAccusative;
+                    return Resources.Messages.DayAccusative;
                 case 2:
-                    return DayGenitive;
+                    return Resources.Messages.DayGenitive;
                 case 3:
-                    return DayGenitive;
+                    return Resources.Messages.DayGenitive;
                 case 4:
-                    return DayGenitive;
+                    return Resources.Messages.DayGenitive;
                 default:
-                    return DaysGenitive;
+                    return Resources.Messages.DaysGenitive;
             }
         }
     }

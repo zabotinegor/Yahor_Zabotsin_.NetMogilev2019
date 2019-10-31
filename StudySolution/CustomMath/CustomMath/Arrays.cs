@@ -18,17 +18,9 @@ namespace CustomMath
             Random = new Random((int)(DateTime.Now.Ticks));
         }
 
-        public static bool IsNullOrEmpty<T>(this T[] array)
-        {
-            return (array == null) || (array.Length == 0);
-        }
-
         public static int GetMax(int[] array)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException();
-            }
+            CheckArray(array);
 
             var max = array[0];
 
@@ -42,13 +34,10 @@ namespace CustomMath
 
             return max;
         }
-        
+
         public static int GetMin(int[] array)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException();
-            }
+            CheckArray(array);
 
             var min = array[0];
 
@@ -62,13 +51,10 @@ namespace CustomMath
 
             return min;
         }
-        
+
         public static int GetSum(int[] array)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException();
-            }
+            CheckArray(array);
 
             var sum = 0;
 
@@ -87,10 +73,7 @@ namespace CustomMath
 
         public static void IncreaseEvenElementsByMaxOddDecreaseByMin(int[] array)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException();
-            }
+            CheckArray(array);
 
             var max = GetMax(array);
             var min = GetMin(array);
@@ -120,10 +103,8 @@ namespace CustomMath
 
         public static IEnumerable<int> Sum(int[] array1, int[] array2)
         {
-            if (array1.IsNullOrEmpty() || array2.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException();
-            }
+            CheckArray(array1);
+            CheckArray(array2);
 
             var newArray = new int[(array1.Length <= array2.Length) ? array2.Length : array1.Length];
 
@@ -146,36 +127,24 @@ namespace CustomMath
             return newArray;
         }
 
-        public static bool GetMinMaxSum(int[] array, out int min, out int max, out int sum)
+        public static void GetMinMaxSum(int[] array, out int min, out int max, out int sum)
         {
-            min = default;
-            max = default;
-            sum = default;
-
-            if (array.IsNullOrEmpty())
-            {
-                return false;
-            }
+            CheckArray(array);
 
             min = GetMin(array);
             max = GetMax(array);
             sum = GetSum(array);
-
-            return true;
         }
-        
+
         public static (int min, int max, int sum) GetMinMaxSum(int[] array)
         {
             return (GetMin(array), GetMax(array), GetSum(array));
         }
-        
+
         public static IEnumerable<int> IncreaseItemsBy5(this int[] array)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException(nameof(array));
-            }
-
+            CheckArray(array);
+            
             for (var i = 0; i < array.Length; i++)
             {
                 array[i] += 5;
@@ -183,13 +152,10 @@ namespace CustomMath
 
             return array;
         }
-        
+
         public static IEnumerable<int> BubbleSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException(nameof(array));
-            }
+            CheckArray(array);
 
             var len = array.Length;
 
@@ -206,13 +172,10 @@ namespace CustomMath
 
             return array;
         }
-        
+
         public static IEnumerable<int> ShakerSort(this int[] array, Direction directDirection = Direction.Asc)
         {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException(nameof(array));
-            }
+            CheckArray(array);
 
             for (var i = 0; i < array.Length / 2; i++)
             {
@@ -246,63 +209,13 @@ namespace CustomMath
 
             return array;
         }
-        
-        private static IEnumerable<int> StoogeSort(int[] array, int startIndex, int endIndex, Direction directDirection = Direction.Asc)
+
+        private static void CheckArray(int[] array)
         {
-            if ((directDirection == Direction.Asc) ? (array[startIndex] > array[endIndex]) : (array[startIndex] < array[endIndex]))
-            {
-                Swap(ref array[startIndex], ref array[endIndex]);
-            }
-
-            if (endIndex - startIndex > 1)
-            {
-                var len = (endIndex - startIndex + 1) / 3;
-
-                StoogeSort(array, startIndex, endIndex - len, directDirection);
-                StoogeSort(array, startIndex + len, endIndex, directDirection);
-                StoogeSort(array, startIndex, endIndex - len, directDirection);
-            }
-
-            return array;
-        }
-
-        public static IEnumerable<int> StoogeSort(this int[] array, Direction directDirection = Direction.Asc)
-        {
-            if (array.IsNullOrEmpty())
+            if ((array == null) || (array.Length == 0))
             {
                 throw new ArgumentNullException(nameof(array));
             }
-
-            return StoogeSort(array, 0, array.Length - 1, directDirection);
-        }
-        
-        public static IEnumerable<int> ShellSort(this int[] array, Direction directDirection = Direction.Asc)
-        {
-            if (array.IsNullOrEmpty())
-            {
-                throw new ArgumentNullException(nameof(array));
-            }
-
-            var d = array.Length / 2;
-
-            while (d >= 1)
-            {
-                for (var i = d; i < array.Length; i++)
-                {
-                    var j = i;
-
-                    while ((j >= d) && ((directDirection == Direction.Asc) ? (array[j - d] > array[j]) : (array[j - d] < array[j])))
-                    {
-                        Swap(ref array[j], ref array[j - d]);
-
-                        j -= d;
-                    }
-                }
-
-                d /= 2;
-            }
-
-            return array;
         }
 
         private static void Swap<T>(ref T item1, ref T item2)

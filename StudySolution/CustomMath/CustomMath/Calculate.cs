@@ -21,6 +21,11 @@ namespace CustomMath
                 case Operations.Dif:
                     return a - b;
                 case Operations.Div:
+                    if (b == 0d)
+                    {
+                        throw new DivideByZeroException($"{nameof(b)} is 0");
+                    }
+
                     return  a / b;
                 case Operations.Mul:
                     return a * b;
