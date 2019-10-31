@@ -2,9 +2,9 @@
 using System.Globalization;
 using CustomMath;
 using InputLib;
-using messages = Task5.Resources.Messages;
+using messages = Task5_2.Resources.Messages;
 
-namespace Task5
+namespace Task5_2
 {
     class Program
     {

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80216628-359D-4D2E-B8B3-4CD3564554AA}</ProjectGuid>
+    <ProjectGuid>{10797541-46F3-45E1-8471-773D8F05C541}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task5</RootNamespace>
-    <AssemblyName>Task5</AssemblyName>
+    <RootNamespace>Task5_1</RootNamespace>
+    <AssemblyName>Task5_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,11 +35,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -50,20 +45,9 @@
       <Name>CustomMath</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\InputLib\InputLib\InputLib.csproj">
-      <Project>{dca9ef2e-5756-458a-ad13-0b6bebf446f1}</Project>
+      <Project>{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}</Project>
       <Name>InputLib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.ru.resx" />
-    <EmbeddedResource Include="Resources\Messages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Messages.ru.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
