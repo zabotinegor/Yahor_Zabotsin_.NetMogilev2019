@@ -121,27 +121,45 @@
     <value>Enter the name of the month or its serial number</value>
   </data>
   <data name="DaysNominative" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="DaysGenitive" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="DaysDative" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="DaysAccusative" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="DaysAblative" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="DaysPrepositional" xml:space="preserve">
-    <value> days</value>
+    <value>days</value>
   </data>
   <data name="MessageWrongMonthName" xml:space="preserve">
     <value>Wrong month name!</value>
   </data>
   <data name="MessageWrongMonthNumber" xml:space="preserve">
     <value>Wrong month number!</value>
+  </data>
+  <data name="DayNominative" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="DayGenitive" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="DayDative" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="DayAccusative" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="DayAblative" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="DayPrepositional" xml:space="preserve">
+    <value>days</value>
   </data>
 </root>

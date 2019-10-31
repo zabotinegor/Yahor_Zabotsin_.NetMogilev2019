@@ -61,7 +61,61 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
+        /// </summary>
+        internal static string DayAblative {
+            get {
+                return ResourceManager.GetString("DayAblative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
+        /// </summary>
+        internal static string DayAccusative {
+            get {
+                return ResourceManager.GetString("DayAccusative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
+        /// </summary>
+        internal static string DayDative {
+            get {
+                return ResourceManager.GetString("DayDative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
+        /// </summary>
+        internal static string DayGenitive {
+            get {
+                return ResourceManager.GetString("DayGenitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to day.
+        /// </summary>
+        internal static string DayNominative {
+            get {
+                return ResourceManager.GetString("DayNominative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
+        /// </summary>
+        internal static string DayPrepositional {
+            get {
+                return ResourceManager.GetString("DayPrepositional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysAblative {
             get {
@@ -70,7 +124,7 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysAccusative {
             get {
@@ -79,7 +133,7 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysDative {
             get {
@@ -88,7 +142,7 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysGenitive {
             get {
@@ -97,7 +151,7 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysNominative {
             get {
@@ -106,7 +160,7 @@ namespace Task5_2.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  days.
+        ///   Looks up a localized string similar to days.
         /// </summary>
         internal static string DaysPrepositional {
             get {

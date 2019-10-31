@@ -121,27 +121,45 @@
     <value>Введите название месяца или его порядковый номер</value>
   </data>
   <data name="DaysNominative" xml:space="preserve">
-    <value> дни</value>
+    <value>дни</value>
   </data>
   <data name="DaysGenitive" xml:space="preserve">
-    <value> дней</value>
+    <value>дней</value>
   </data>
   <data name="DaysDative" xml:space="preserve">
-    <value> дням</value>
+    <value>дням</value>
   </data>
   <data name="DaysAccusative" xml:space="preserve">
-    <value> дни</value>
+    <value>дни</value>
   </data>
   <data name="DaysAblative" xml:space="preserve">
-    <value> днями</value>
+    <value>днями</value>
   </data>
   <data name="DaysPrepositional" xml:space="preserve">
-    <value> днях</value>
+    <value>днях</value>
   </data>
   <data name="MessageWrongMonthName" xml:space="preserve">
     <value>Неверное название месяца!</value>
   </data>
   <data name="MessageWrongMonthNumber" xml:space="preserve">
     <value>Неверный номер месяца!</value>
+  </data>
+  <data name="DayNominative" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="DayGenitive" xml:space="preserve">
+    <value>дня</value>
+  </data>
+  <data name="DayDative" xml:space="preserve">
+    <value>дню</value>
+  </data>
+  <data name="DayAccusative" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="DayAblative" xml:space="preserve">
+    <value>днем</value>
+  </data>
+  <data name="DayPrepositional" xml:space="preserve">
+    <value>дне</value>
   </data>
 </root>

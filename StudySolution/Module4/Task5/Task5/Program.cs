@@ -1,8 +1,8 @@
-﻿using System;
-using System.Globalization;
-using CustomMath;
+﻿using CustomMath;
 using InputLib;
-using messages = Task5_2.Resources.Messages;
+using System;
+using System.Globalization;
+using static Task5_2.Resources.Messages;
 
 namespace Task5_2
 {
@@ -12,24 +12,51 @@ namespace Task5_2
         {
             var dtfi = DateTimeFormatInfo.CurrentInfo;
 
-            Console.WriteLine(messages.MessageEnterMonth);
+            Console.WriteLine(MessageEnterMonth);
 
             var stringBuffer = Console.ReadLine();
 
             if (InputData.IntData(stringBuffer, out var month))
             {
                 Console.WriteLine(Calendars.GetDaysInMonth(dtfi, month, out var monthName, out var daysInMonth)
-                    ? $@"{monthName}, {daysInMonth} {messages.DaysGenitive}"
-                    : messages.MessageWrongMonthNumber);
+                    ? $@"{monthName}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
+                    : MessageWrongMonthNumber);
             }
             else
             {
-                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, stringBuffer, out var days)
-                    ? $@"{stringBuffer.StartWithСap()}, {days} {messages.DaysGenitive}"
-                    : messages.MessageWrongMonthName);
+                Console.WriteLine(Calendars.GetDaysInMonth(dtfi, stringBuffer, out var daysInMonth)
+                    ? $@"{stringBuffer.StartWithСap()}, {daysInMonth} {MatchingDaysWithWumerals(daysInMonth)}"
+                    : MessageWrongMonthName);
             }
 
             Console.ReadKey();
+        }
+
+        private static string MatchingDaysWithWumerals(int days)
+        {
+            if ((2 <= days) && (days < 5))
+            {
+                return DayGenitive;
+            }
+            else if ((5 <= days) && (days < 20))
+            {
+                return DaysGenitive;
+            }
+            else switch (days % 10)
+            {
+                case 0:
+                    return DaysGenitive;
+                case 1:
+                    return DayAccusative;
+                case 2:
+                    return DayGenitive;
+                case 3:
+                    return DayGenitive;
+                case 4:
+                    return DayGenitive;
+                default:
+                    return DaysGenitive;
+            }
         }
     }
 }
