@@ -1,6 +1,6 @@
 ﻿namespace GameComponents
 {
-    internal class Person : FieldObject
+    public class Person : FieldObject
     {
 
         private int live;
@@ -16,10 +16,14 @@
 
         protected bool IsAlive() => (Live > 0);
 
-        protected Person(string name, (int x, int y) coordinates) : base(coordinates)
+        public Person(string name, (int x, int y) coordinates) : base(coordinates)
         {
             Name = name;
             Live = 10;
+        }
+
+        public Person(string name) : this(name, (0, 0))
+        {
         }
 
         protected override void Explode(int damage)

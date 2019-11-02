@@ -1,5 +1,5 @@
 ﻿using System;
-using GameComponents;
+using  Game.Resources;
 
 namespace Game
 {
@@ -7,10 +7,7 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            var x = (5, 6);
-            var y = (6, 5);
-            if (x == y)
-                Console.WriteLine("1");
+            var game = new Game(Messages.DefoultUserName);
 
             Console.ReadKey();
         }

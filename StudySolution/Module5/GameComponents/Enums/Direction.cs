@@ -1,6 +1,6 @@
 ﻿namespace GameComponents.Enums
 {
-    internal enum Direction
+    public enum Direction
     {
         Up,
         Down,

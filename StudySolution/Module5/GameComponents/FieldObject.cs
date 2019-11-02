@@ -1,8 +1,8 @@
 ﻿namespace GameComponents
 {
-    internal abstract class FieldObject
+    public abstract class FieldObject
     {
-        protected (int X, int Y) Coordinates { get; set; }
+        internal (int X, int Y) Coordinates { get; set; }
 
         protected FieldObject((int x, int y) coordinates)
         {
