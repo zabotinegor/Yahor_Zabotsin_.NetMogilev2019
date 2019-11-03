@@ -100,4 +100,7 @@
   <data name="DefoultUserName" xml:space="preserve">
     <value>Player</value>
   </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Enter your name</value>
+  </data>
 </root>

@@ -14,7 +14,7 @@
             private set => live = (value < 0) ? 0 : value;
         }
 
-        protected bool IsAlive() => (Live > 0);
+        public bool IsAlive() => (Live > 0);
 
         public Person(string name, (int x, int y) coordinates) : base(coordinates)
         {
@@ -29,6 +29,11 @@
         protected override void Explode(int damage)
         {
             Live -= damage;
+        }
+
+        public override string ToString()
+        {
+            return "@ ";
         }
     }
 }

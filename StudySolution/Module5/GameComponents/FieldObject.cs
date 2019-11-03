@@ -10,5 +10,7 @@
         }
 
         protected abstract void Explode(int damage);
+
+        public abstract override string ToString();
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace GameComponents
 {
-    delegate void AccountStateHandler(object sender, FieldEventArgs e);
+    public delegate void FieldStateHandler(object sender, FieldEventArgs e);
 
-    class FieldEventArgs
+    public class FieldEventArgs
     {
         public string Message { get; private set; }
 

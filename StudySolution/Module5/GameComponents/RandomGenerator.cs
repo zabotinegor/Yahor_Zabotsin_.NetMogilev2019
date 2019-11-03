@@ -2,9 +2,10 @@
 
 namespace GameComponents
 {
-    internal static class RandomGenerator
+    public static class RandomGenerator
     {
         private static readonly Random Random;
+
         static RandomGenerator()
         {
             Random = new Random((int) DateTime.Now.Ticks);

@@ -6,7 +6,7 @@ namespace Game
     {
         internal Field Field { get; private set; }
 
-        private  Person Person { get;  }
+        internal Person Person { get;  }
 
         internal Game(string userName)
         {

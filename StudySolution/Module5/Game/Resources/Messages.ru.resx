@@ -120,4 +120,7 @@
   <data name="DefoultUserName" xml:space="preserve">
     <value>Игрок</value>
   </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Введите свое имя</value>
+  </data>
 </root>

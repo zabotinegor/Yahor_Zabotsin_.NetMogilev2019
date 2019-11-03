@@ -68,5 +68,14 @@ namespace Game.Resources {
                 return ResourceManager.GetString("DefoultUserName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your name.
+        /// </summary>
+        internal static string EnterName {
+            get {
+                return ResourceManager.GetString("EnterName", resourceCulture);
+            }
+        }
     }
 }

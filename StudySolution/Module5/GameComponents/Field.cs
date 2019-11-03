@@ -1,6 +1,6 @@
-﻿using System;
+﻿using GameComponents.Enums;
+using System;
 using System.Collections.Generic;
-using GameComponents.Enums;
 
 namespace GameComponents
 {
@@ -13,7 +13,7 @@ namespace GameComponents
         protected Person Person { get; }
 
         protected IDictionary<ValueTuple<int, int>, Bomb> Bombs { get; }
-        
+
         public Field(int width, int height, Person person, int bombCount)
         {
             Width = width;
@@ -41,26 +41,47 @@ namespace GameComponents
             }
         }
 
-        public void Move(FieldObject fieldObject, Direction direction)
+        public void MovePerson(Direction direction)
         {
-            var coordinates = fieldObject.Coordinates;
+            var coordinates = Person.Coordinates;
 
             switch (direction)
             {
                 case Direction.Up:
-                    fieldObject.Coordinates = (coordinates.X, coordinates.Y + 1);
+                    Person.Coordinates = (coordinates.X, coordinates.Y + 1);
                     break;
                 case Direction.Down:
-                    fieldObject.Coordinates = (coordinates.X, coordinates.Y - 1);
+                    Person.Coordinates = (coordinates.X, coordinates.Y - 1);
                     break;
                 case Direction.Left:
-                    fieldObject.Coordinates = (coordinates.X - 1, coordinates.Y);
+                    Person.Coordinates = (coordinates.X - 1, coordinates.Y);
                     break;
                 case Direction.Right:
-                    fieldObject.Coordinates = (coordinates.X + 1, coordinates.Y);
-                    break;default:
-                    throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+                    Person.Coordinates = (coordinates.X + 1, coordinates.Y);
+                    break;
             }
+        }
+
+        public override string ToString()
+        {
+            var result = string.Empty;
+
+            for (var i = 0; i < Height; i++)
+            {
+                for (var j = 0; j < Width; j++)
+                {
+                    var temp = ((i, j) == Person.Coordinates) ? Person.ToString() :
+                        Bombs.TryGetValue((i, j), out var bomb) ? bomb.ToString() : "X ";
+
+                    result = string.Concat(result, temp);
+                }
+
+                result = string.Concat(result, "\n");
+            }
+
+            result = string.Concat(result, "\n");
+
+            return result;
         }
     }
 }

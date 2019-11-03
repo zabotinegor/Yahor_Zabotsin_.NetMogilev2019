@@ -16,5 +16,10 @@
         {
             IsActive = false;
         }
+
+        public override string ToString()
+        {
+            return IsActive ? "X " : "o ";
+        }
     }
 }
