@@ -1,10 +1,12 @@
-﻿namespace GameComponents.Enums
+﻿using System;
+
+namespace GameComponents.Enums
 {
     public enum Direction
     {
-        Up,
-        Down,
-        Left,
-        Right
+        Up = ConsoleKey.UpArrow,
+        Down = ConsoleKey.DownArrow,
+        Left = ConsoleKey.LeftArrow,
+        Right = ConsoleKey.RightArrow
     }
 }

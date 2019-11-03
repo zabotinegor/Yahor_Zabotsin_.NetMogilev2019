@@ -11,7 +11,7 @@ namespace Game
         internal Game(string userName)
         {
             Person = new Person(userName);
-            Field = new Field(10, 10, Person, 10);
+            Field = new Field(15, 10, Person, 10);
         }
 
         internal void Restart()

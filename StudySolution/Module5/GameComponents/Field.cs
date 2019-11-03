@@ -6,6 +6,8 @@ namespace GameComponents
 {
     public class Field
     {
+        protected internal event FieldStateHandler Changed;
+
         protected int Width { get; }
 
         protected int Height { get; }
@@ -48,18 +50,29 @@ namespace GameComponents
             switch (direction)
             {
                 case Direction.Up:
-                    Person.Coordinates = (coordinates.X, coordinates.Y + 1);
+                    Person.Coordinates = (coordinates.Y > 0) ? (coordinates.X, coordinates.Y - 1) : coordinates;
                     break;
                 case Direction.Down:
-                    Person.Coordinates = (coordinates.X, coordinates.Y - 1);
+                    Person.Coordinates = (coordinates.Y < Height - 1) ? (coordinates.X, coordinates.Y + 1) : coordinates;
                     break;
                 case Direction.Left:
-                    Person.Coordinates = (coordinates.X - 1, coordinates.Y);
+                    Person.Coordinates = (coordinates.X > 0) ? (coordinates.X - 1, coordinates.Y) : coordinates;
                     break;
                 case Direction.Right:
-                    Person.Coordinates = (coordinates.X + 1, coordinates.Y);
+                    Person.Coordinates = (coordinates.X < Width - 1) ? (coordinates.X + 1, coordinates.Y) : coordinates;
                     break;
             }
+        }
+
+        private void CallEvent(FieldEventArgs e, FieldStateHandler handler)
+        {
+            if (e != null)
+                handler?.Invoke(this, e);
+        }
+
+        protected virtual void OnChanged(FieldEventArgs e)
+        {
+            CallEvent(e, Changed);
         }
 
         public override string ToString()
@@ -70,8 +83,8 @@ namespace GameComponents
             {
                 for (var j = 0; j < Width; j++)
                 {
-                    var temp = ((i, j) == Person.Coordinates) ? Person.ToString() :
-                        Bombs.TryGetValue((i, j), out var bomb) ? bomb.ToString() : "X ";
+                    var temp = ((j, i) == Person.Coordinates) ? Person.ToString() :
+                        Bombs.TryGetValue((j, i), out var bomb) ? bomb.ToString() : "X ";
 
                     result = string.Concat(result, temp);
                 }
