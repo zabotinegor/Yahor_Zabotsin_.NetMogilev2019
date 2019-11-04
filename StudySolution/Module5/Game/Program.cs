@@ -1,7 +1,7 @@
 ﻿using Game.Resources;
 using GameComponents.Enums;
-using System;
 using Interfaces;
+using System;
 
 namespace Game
 {
@@ -12,21 +12,37 @@ namespace Game
             IUserInterface gameInterface = new ConsoleInterface();
 
             gameInterface.WriteLine($"{Messages.EnterName}: ");
-            var userName = gameInterface.ReadLine();
 
+            var userName = gameInterface.ReadLine();
             var game = new Game(!string.IsNullOrEmpty(userName) ? userName : Messages.DefoultUserName);
 
             game.Field.Changed += (sender, eventArgs) =>
             {
                 gameInterface.StartFromTop();
-                gameInterface.WriteWithClearNextLine(game.Field);
-                gameInterface.WriteWithClearNextLine(eventArgs.Message);
+                gameInterface.WriteWithClearLine(game.Field);
+                gameInterface.ClearPreviousConsoleLine();
+
+                gameInterface.WriteWithClearLine(eventArgs.Message);
+                gameInterface.ClearCurrentConsoleLine();
+                gameInterface.ClearNextConsoleLine();
+            };
+            game.Field.Collapsed += (sender, eventArgs) =>
+            {
+                gameInterface.WriteWithClearLine(eventArgs.Message);
+                gameInterface.ClearCurrentConsoleLine();
+            };
+            game.Field.Released += (sender, eventArgs) =>
+            {
+                gameInterface.Clear();
+                gameInterface.WriteLine(Resources.Messages.YouWin);
             };
 
-            game.Field.Collapsed += (sender, eventArgs) => gameInterface.WriteWithClearNextLine(eventArgs.Message);
+            gameInterface.Clear();
+            gameInterface.WriteLine($"{game.Person.Name}");
+            gameInterface.WriteLine($"{game.Person.ToString()} - {Resources.Messages.You}");
+            gameInterface.WriteLine($"{GameComponents.Resources.Dysplay.Exit} - {Resources.Messages.Exit}\n");
 
-            gameInterface.StartFromTop();
-            gameInterface.WriteWithClearNextLine(game.Field);
+            gameInterface.WriteLine(game.Field);
 
             do
             {

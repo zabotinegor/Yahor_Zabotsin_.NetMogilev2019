@@ -22,7 +22,7 @@ namespace GameComponents.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Dysplay {
+    public class Dysplay {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace GameComponents.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GameComponents.Resources.Dysplay", typeof(Dysplay).Assembly);
@@ -51,7 +51,7 @@ namespace GameComponents.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Boom!.
         /// </summary>
-        internal static string Bang {
+        public static string Bang {
             get {
                 return ResourceManager.GetString("Bang", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to O.
         /// </summary>
-        internal static string BombActive {
+        public static string BombActive {
             get {
                 return ResourceManager.GetString("BombActive", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to o.
         /// </summary>
-        internal static string BombDeactive {
+        public static string BombDeactive {
             get {
                 return ResourceManager.GetString("BombDeactive", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to X.
         /// </summary>
-        internal static string Cell {
+        public static string Cell {
             get {
                 return ResourceManager.GetString("Cell", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to E.
         /// </summary>
-        internal static string Exit {
+        public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace GameComponents.Resources {
         /// <summary>
         ///   Looks up a localized string similar to @.
         /// </summary>
-        internal static string Person {
+        public static string Person {
             get {
                 return ResourceManager.GetString("Person", resourceCulture);
             }

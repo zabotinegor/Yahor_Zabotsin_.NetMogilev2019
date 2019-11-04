@@ -10,6 +10,8 @@ namespace GameComponents
 
         public event FieldStateHandler Collapsed;
 
+        public event FieldStateHandler Released;
+
         protected int Width { get; }
 
         protected int Height { get; }
@@ -75,6 +77,11 @@ namespace GameComponents
                 Bombs.Add(bomb.Coordinates, bomb);
                 OnCollapsed(new FieldEventArgs(string.Concat(Resources.Dysplay.Bang, $" -{bomb.Damage}")));
             }
+
+            if (Person.Coordinates == (Width - 1, Height - 1))
+            {
+                OnReleased(new FieldEventArgs(""));
+            }
         }
 
         private bool CheckBombCoordinates((int, int) coordinates)
@@ -98,6 +105,11 @@ namespace GameComponents
             CallEvent(e, Collapsed);
         }
 
+        protected virtual void OnReleased(FieldEventArgs e)
+        {
+            CallEvent(e, Released);
+        }
+
         public override string ToString()
         {
             var result = string.Empty;
@@ -109,7 +121,7 @@ namespace GameComponents
                     var temp = ((j, i) == Person.Coordinates) ? Person.ToString() :
                         Bombs.TryGetValue((j, i), out var bomb) ? bomb.ToString() : $"{Resources.Dysplay.Cell} ";
 
-                    result = string.Concat(result, temp);
+                    result = string.Concat(result, ((i == Height - 1) && (j == Width - 1)) ? Resources.Dysplay.Exit : temp);
                 }
 
                 result = string.Concat(result, "\n");

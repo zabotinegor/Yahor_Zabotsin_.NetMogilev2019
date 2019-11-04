@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Dysplay.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Dysplay.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Dysplay.ru.resx" />

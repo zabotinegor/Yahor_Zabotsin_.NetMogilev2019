@@ -12,9 +12,13 @@ namespace Interfaces
 
         void Clear();
 
-        void WriteWithClearNextLine<T>(T obj);
+        void WriteWithClearLine<T>(T obj);
 
-        void ClearLine();
+        void ClearCurrentConsoleLine();
+
+        void ClearPreviousConsoleLine();
+
+        void ClearNextConsoleLine();
 
         void StartFromTop();
     }

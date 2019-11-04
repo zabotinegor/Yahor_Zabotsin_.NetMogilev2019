@@ -7,7 +7,7 @@ namespace GameComponents
 
         private int live;
 
-        internal string Name { get; }
+        public string Name { get; }
 
         protected internal int Live
         {

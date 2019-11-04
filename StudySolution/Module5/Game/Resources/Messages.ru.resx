@@ -132,4 +132,10 @@
   <data name="Exit" xml:space="preserve">
     <value>Выход</value>
   </data>
+  <data name="YouWin" xml:space="preserve">
+    <value>Ты выиграл!</value>
+  </data>
+  <data name="YouLose" xml:space="preserve">
+    <value>Ты проиграл!</value>
+  </data>
 </root>

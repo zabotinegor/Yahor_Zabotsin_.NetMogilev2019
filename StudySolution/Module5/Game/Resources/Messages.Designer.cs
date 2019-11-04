@@ -104,5 +104,23 @@ namespace Game.Resources {
                 return ResourceManager.GetString("You", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You lose!.
+        /// </summary>
+        internal static string YouLose {
+            get {
+                return ResourceManager.GetString("YouLose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You win!.
+        /// </summary>
+        internal static string YouWin {
+            get {
+                return ResourceManager.GetString("YouWin", resourceCulture);
+            }
+        }
     }
 }

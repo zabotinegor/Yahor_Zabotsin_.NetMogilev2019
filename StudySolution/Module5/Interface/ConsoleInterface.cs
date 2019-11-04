@@ -24,16 +24,36 @@ namespace Interfaces
             Console.Clear();
         }
 
-        public void WriteWithClearNextLine<T>(T obj)
+        public void WriteWithClearLine<T>(T obj)
         {
+            ClearCurrentConsoleLine();
             Console.WriteLine(obj);
-            ClearLine();
         }
 
-        public void ClearLine()
+        public void ClearCurrentConsoleLine()
         {
+            var currentLineCursor = Console.CursorTop;
+
+            Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
+        }
+
+        public void ClearPreviousConsoleLine()
+        {
+            var currentLineCursor = Console.CursorTop;
+
             Console.SetCursorPosition(0, Console.CursorTop - 1);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
+        }
+
+        public void ClearNextConsoleLine()
+        {
+            int currentLineCursor = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop + 1);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
         }
 
         public void StartFromTop()
