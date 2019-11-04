@@ -80,6 +80,7 @@ namespace GameComponents
 
             if (Person.Coordinates == (Width - 1, Height - 1))
             {
+                Person.Explode(10);
                 OnReleased(new FieldEventArgs(""));
             }
         }

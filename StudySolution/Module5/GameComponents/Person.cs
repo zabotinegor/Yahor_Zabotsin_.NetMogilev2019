@@ -1,6 +1,4 @@
-﻿using System.Runtime.Remoting.Messaging;
-
-namespace GameComponents
+﻿namespace GameComponents
 {
     public class Person : FieldObject
     {
@@ -17,6 +15,12 @@ namespace GameComponents
         }
 
         public bool IsAlive() => (Live > 0);
+
+        public void Resurrection()
+        {
+            Live = 10;
+            Coordinates = (0, 0);
+        }
 
         public Person(string name, (int x, int y) coordinates) : base(coordinates)
         {

@@ -118,4 +118,7 @@
   <data name="YouLose" xml:space="preserve">
     <value>You lose!</value>
   </data>
+  <data name="RequestToContinue" xml:space="preserve">
+    <value>Would you like to continue? +/-</value>
+  </data>
 </root>

@@ -97,6 +97,15 @@ namespace Game.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Would you like to continue? +/-.
+        /// </summary>
+        internal static string RequestToContinue {
+            get {
+                return ResourceManager.GetString("RequestToContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You.
         /// </summary>
         internal static string You {

@@ -16,7 +16,8 @@ namespace Game
 
         internal void Restart()
         {
-            Field = new Field(10, 10, Person, 10);
+            Person.Resurrection();
+            Field = new Field(15, 10, Person, 10);
         }
     }
 }
