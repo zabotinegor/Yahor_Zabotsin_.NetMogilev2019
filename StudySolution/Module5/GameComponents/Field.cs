@@ -140,7 +140,7 @@ namespace GameComponents
                 {
                     var temp = ((j, i) == Person.Coordinates) ? Person.ToString() :
                         (Bombs.TryGetValue((j, i), out var bomb1) && !bomb1.IsActive) ? bomb1.ToString() :
-                        (Bombs.TryGetValue((j, i), out var bomb2) && godMode) ? bomb2.ToString() : $"{Resources.Dysplay.Cell} ";
+                        (Bombs.TryGetValue((j, i), out var bomb2) && godMode) ? $"{bomb2.Damage} " : $"{Resources.Dysplay.Cell} ";
 
                     result = string.Concat(result, ((i == Height - 1) && (j == Width - 1)) ? Resources.Dysplay.Exit : temp);
                 }
