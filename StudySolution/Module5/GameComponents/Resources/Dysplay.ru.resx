@@ -129,7 +129,7 @@
   <data name="Bang" xml:space="preserve">
     <value>Бум!</value>
   </data>
-  <data name="Сell" xml:space="preserve">
+  <data name="Cell" xml:space="preserve">
     <value>Х</value>
   </data>
 </root>

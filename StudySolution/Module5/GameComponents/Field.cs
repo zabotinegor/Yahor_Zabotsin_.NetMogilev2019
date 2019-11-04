@@ -8,6 +8,8 @@ namespace GameComponents
     {
         public event FieldStateHandler Changed;
 
+        public event FieldStateHandler Collapsed;
+
         protected int Width { get; }
 
         protected int Height { get; }
@@ -62,7 +64,17 @@ namespace GameComponents
                     Person.Coordinates = (coordinates.X < Width - 1) ? (coordinates.X + 1, coordinates.Y) : coordinates;
                     break;
             }
-            OnChanged(new FieldEventArgs(Person.Name));
+
+            OnChanged(new FieldEventArgs(Person.ToString(true)));
+
+            if (Bombs.TryGetValue((Person.Coordinates), out var bomb) && bomb.IsActive)
+            {
+                Person.Explode(bomb.Damage);
+                bomb.Explode(bomb.Damage);
+                Bombs.Remove(bomb.Coordinates);
+                Bombs.Add(bomb.Coordinates, bomb);
+                OnCollapsed(new FieldEventArgs(Resources.Dysplay.Bang));
+            }
         }
 
         private void CallEvent(FieldEventArgs e, FieldStateHandler handler)
@@ -76,6 +88,11 @@ namespace GameComponents
             CallEvent(e, Changed);
         }
 
+        protected virtual void OnCollapsed(FieldEventArgs e)
+        {
+            CallEvent(e, Collapsed);
+        }
+
         public override string ToString()
         {
             var result = string.Empty;
@@ -85,15 +102,13 @@ namespace GameComponents
                 for (var j = 0; j < Width; j++)
                 {
                     var temp = ((j, i) == Person.Coordinates) ? Person.ToString() :
-                        Bombs.TryGetValue((j, i), out var bomb) ? bomb.ToString() : "X ";
+                        Bombs.TryGetValue((j, i), out var bomb) ? bomb.ToString() : $"{Resources.Dysplay.Cell} ";
 
                     result = string.Concat(result, temp);
                 }
 
                 result = string.Concat(result, "\n");
             }
-
-            result = string.Concat(result, "\n");
 
             return result;
         }

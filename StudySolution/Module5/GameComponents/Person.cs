@@ -1,4 +1,6 @@
-﻿namespace GameComponents
+﻿using System.Runtime.Remoting.Messaging;
+
+namespace GameComponents
 {
     public class Person : FieldObject
     {
@@ -26,7 +28,7 @@
         {
         }
 
-        protected override void Explode(int damage)
+        internal override void Explode(int damage)
         {
             Live -= damage;
         }
@@ -34,6 +36,21 @@
         public override string ToString()
         {
             return $"{Resources.Dysplay.Person} ";
+        }
+
+        public string ToString(bool live)
+        {
+            var result = string.Concat(Name, ": ");
+
+            if (live)
+            {
+                for (var i = 1; i <= this.live; i++)
+                {
+                    result = string.Concat(result, $"{i} ");
+                }
+            }
+
+            return result;
         }
     }
 }

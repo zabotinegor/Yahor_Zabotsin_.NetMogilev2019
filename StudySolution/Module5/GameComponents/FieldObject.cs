@@ -9,7 +9,7 @@
             Coordinates = coordinates;
         }
 
-        protected abstract void Explode(int damage);
+        internal abstract void Explode(int damage);
 
         public abstract override string ToString();
     }

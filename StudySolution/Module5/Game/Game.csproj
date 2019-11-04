@@ -50,6 +50,10 @@
       <Project>{47c544c9-b5a4-4f87-aa75-e5cb195b6417}</Project>
       <Name>GameComponents</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interface\Interfaces.csproj">
+      <Project>{4EC45DC8-1844-4F07-B239-0D40A67F4F9F}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Messages.resx">

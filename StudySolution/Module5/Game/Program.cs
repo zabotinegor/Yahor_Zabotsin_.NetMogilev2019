@@ -1,6 +1,7 @@
 ﻿using Game.Resources;
 using GameComponents.Enums;
 using System;
+using Interfaces;
 
 namespace Game
 {
@@ -11,13 +12,18 @@ namespace Game
             var game = new Game(Messages.DefoultUserName);
             game.Field.Changed += (sender, eventArgs) =>
             {
-                Console.SetCursorPosition(0, 0);
-                Console.WriteLine(game.Field);
-                Console.WriteLine(eventArgs.Message);
+                ConsoleInterface.StartFromTop();
+                ConsoleInterface.WriteWithClearNextLine(game.Field);
+                ConsoleInterface.WriteWithClearNextLine(eventArgs.Message);
             };
 
-            Console.SetCursorPosition(0, 0);
-            Console.WriteLine(game.Field);
+            game.Field.Collapsed += (sender, eventArgs) =>
+            {
+                ConsoleInterface.WriteWithClearNextLine(eventArgs.Message);
+            };
+
+            ConsoleInterface.StartFromTop();
+            ConsoleInterface.WriteWithClearNextLine(game.Field);
 
             while (true)
             {

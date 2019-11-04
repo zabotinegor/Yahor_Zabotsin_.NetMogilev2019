@@ -2,9 +2,9 @@
 {
     public class Bomb : FieldObject
     {
-        protected int Damage { get; }
+        internal int Damage { get; }
 
-        protected bool IsActive { get; private set; }
+        internal bool IsActive { get; private set; }
 
         public Bomb((int x, int y) coordinates) : base(coordinates)
         {
@@ -12,7 +12,7 @@
             IsActive = true;
         }
 
-        protected override void Explode(int damage)
+        internal override void Explode(int damage)
         {
             IsActive = false;
         }

@@ -88,20 +88,20 @@ namespace GameComponents.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to X.
+        /// </summary>
+        internal static string Cell {
+            get {
+                return ResourceManager.GetString("Cell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @.
         /// </summary>
         internal static string Person {
             get {
                 return ResourceManager.GetString("Person", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to X.
-        /// </summary>
-        internal static string Сell {
-            get {
-                return ResourceManager.GetString("Сell", resourceCulture);
             }
         }
     }
