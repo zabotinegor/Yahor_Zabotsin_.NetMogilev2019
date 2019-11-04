@@ -12,6 +12,10 @@ namespace GameComponents
 
         public event FieldStateHandler Released;
 
+        public event FieldStateHandler Died;
+
+        private readonly bool godMode;
+
         protected int Width { get; }
 
         protected int Height { get; }
@@ -25,6 +29,7 @@ namespace GameComponents
             Width = width;
             Height = height;
             Person = person;
+            godMode = false;
 
             Bombs = new Dictionary<(int, int), Bomb>();
 
@@ -45,6 +50,11 @@ namespace GameComponents
                     }
                 }
             }
+        }
+
+        public Field(int width, int height, Person person, int bombCount, bool godMode) : this(width, height, person, bombCount)
+        {
+            this.godMode = godMode;
         }
 
         public void MovePerson(Direction direction)
@@ -71,14 +81,18 @@ namespace GameComponents
 
             if (Bombs.TryGetValue((Person.Coordinates), out var bomb) && bomb.IsActive)
             {
-                Person.Explode(bomb.Damage);
+                OnCollapsed(new FieldEventArgs(string.Concat(Resources.Dysplay.Bang, $" -{bomb.Damage}")));
                 bomb.Explode(bomb.Damage);
                 Bombs.Remove(bomb.Coordinates);
                 Bombs.Add(bomb.Coordinates, bomb);
-                OnCollapsed(new FieldEventArgs(string.Concat(Resources.Dysplay.Bang, $" -{bomb.Damage}")));
+                Person.Explode(bomb.Damage);
             }
 
-            if (Person.Coordinates == (Width - 1, Height - 1))
+            if (!Person.IsAlive())
+            {
+                OnDied(new FieldEventArgs(""));
+            }
+            else if (Person.Coordinates == (Width - 1, Height - 1))
             {
                 Person.Explode(10);
                 OnReleased(new FieldEventArgs(""));
@@ -111,6 +125,11 @@ namespace GameComponents
             CallEvent(e, Released);
         }
 
+        protected virtual void OnDied(FieldEventArgs e)
+        {
+            CallEvent(e, Died);
+        }
+
         public override string ToString()
         {
             var result = string.Empty;
@@ -120,7 +139,8 @@ namespace GameComponents
                 for (var j = 0; j < Width; j++)
                 {
                     var temp = ((j, i) == Person.Coordinates) ? Person.ToString() :
-                        Bombs.TryGetValue((j, i), out var bomb) ? bomb.ToString() : $"{Resources.Dysplay.Cell} ";
+                        (Bombs.TryGetValue((j, i), out var bomb1) && !bomb1.IsActive) ? bomb1.ToString() :
+                        (Bombs.TryGetValue((j, i), out var bomb2) && godMode) ? bomb2.ToString() : $"{Resources.Dysplay.Cell} ";
 
                     result = string.Concat(result, ((i == Height - 1) && (j == Width - 1)) ? Resources.Dysplay.Exit : temp);
                 }

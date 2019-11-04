@@ -70,15 +70,6 @@ namespace Game.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Game over!.
-        /// </summary>
-        internal static string EndOver {
-            get {
-                return ResourceManager.GetString("EndOver", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enter your name.
         /// </summary>
         internal static string EnterName {
@@ -93,6 +84,15 @@ namespace Game.Resources {
         internal static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game over!.
+        /// </summary>
+        internal static string GameOver {
+            get {
+                return ResourceManager.GetString("GameOver", resourceCulture);
             }
         }
         

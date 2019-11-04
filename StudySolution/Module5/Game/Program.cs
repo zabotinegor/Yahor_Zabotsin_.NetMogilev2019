@@ -9,6 +9,8 @@ namespace Game
     {
         static void Main(string[] args)
         {
+            var mode = (args.Length != 0) && args[0].Equals("-g");
+
             IUserInterface gameInterface = new ConsoleInterface();
 
             gameInterface.WriteLine($"{Messages.EnterName}: ");
@@ -16,7 +18,7 @@ namespace Game
             var userName = gameInterface.ReadLine();
 
             #region GameInitialization
-            var game = new Game(!string.IsNullOrEmpty(userName) ? userName : Messages.DefoultUserName);
+            var game = new Game(!string.IsNullOrEmpty(userName) ? userName : Messages.DefoultUserName, mode);
             #endregion
 
             while (true)
@@ -33,15 +35,19 @@ namespace Game
                             gameInterface.ClearNextConsoleLine();
                         };
                 game.Field.Collapsed += (sender, eventArgs) =>
-                {
-                    gameInterface.WriteWithClearLine(eventArgs.Message);
-                    gameInterface.ClearCurrentConsoleLine();
-                };
+                        {
+                            gameInterface.WriteWithClearLine(eventArgs.Message);
+                            gameInterface.ClearCurrentConsoleLine();
+                        };
                 game.Field.Released += (sender, eventArgs) =>
-                {
-                    gameInterface.Clear();
-                    gameInterface.WriteLine(Resources.Messages.YouWin);
-                };
+                        {
+                            gameInterface.Clear();
+                            gameInterface.WriteLine(Resources.Messages.YouWin);
+                        };
+                game.Field.Died += (sender, eventArgs) =>
+                        {
+                            gameInterface.WriteLine(Resources.Messages.YouLose);
+                        };
                 #endregion
 
                 #region StartDisplay
@@ -49,7 +55,7 @@ namespace Game
                 gameInterface.WriteLine($"{game.Person.Name}");
                 gameInterface.WriteLine($"{game.Person.ToString()} - {Resources.Messages.You}");
                 gameInterface.WriteLine($"{GameComponents.Resources.Dysplay.Exit} - {Resources.Messages.Exit}\n");
-                gameInterface.WriteLine(game.Field); 
+                gameInterface.WriteLine(game.Field);
                 #endregion
 
                 do
@@ -57,13 +63,13 @@ namespace Game
                     game.Field.MovePerson((Direction)gameInterface.ReadKey().Key);
                 } while (game.Person.IsAlive());
 
-                Console.WriteLine(Resources.Messages.RequestToContinue);
+                gameInterface.WriteLine(Resources.Messages.RequestToContinue);
                 ConsoleKey answer;
 
                 do
                 {
                     gameInterface.ClearCurrentConsoleLine();
-                    answer = Console.ReadKey().Key;
+                    answer = gameInterface.ReadKey().Key;
                 } while ((answer != ConsoleKey.Add) && (answer != ConsoleKey.Subtract));
 
                 if (answer == ConsoleKey.Subtract)
@@ -72,11 +78,14 @@ namespace Game
                 }
                 else
                 {
-                    game.Restart();
+                    game.Restart(mode);
                 }
             }
 
-            Console.ReadKey();
+            gameInterface.Clear();
+            gameInterface.WriteLine(Resources.Messages.GameOver);
+
+            gameInterface.ReadKey();
         }
     }
 }
