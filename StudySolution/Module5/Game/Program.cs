@@ -9,27 +9,31 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            var game = new Game(Messages.DefoultUserName);
+            IUserInterface gameInterface = new ConsoleInterface();
+
+            gameInterface.WriteLine($"{Messages.EnterName}: ");
+            var userName = gameInterface.ReadLine();
+
+            var game = new Game(!string.IsNullOrEmpty(userName) ? userName : Messages.DefoultUserName);
+
             game.Field.Changed += (sender, eventArgs) =>
             {
-                ConsoleInterface.StartFromTop();
-                ConsoleInterface.WriteWithClearNextLine(game.Field);
-                ConsoleInterface.WriteWithClearNextLine(eventArgs.Message);
+                gameInterface.StartFromTop();
+                gameInterface.WriteWithClearNextLine(game.Field);
+                gameInterface.WriteWithClearNextLine(eventArgs.Message);
             };
 
-            game.Field.Collapsed += (sender, eventArgs) =>
+            game.Field.Collapsed += (sender, eventArgs) => gameInterface.WriteWithClearNextLine(eventArgs.Message);
+
+            gameInterface.StartFromTop();
+            gameInterface.WriteWithClearNextLine(game.Field);
+
+            do
             {
-                ConsoleInterface.WriteWithClearNextLine(eventArgs.Message);
-            };
+                game.Field.MovePerson((Direction)gameInterface.ReadKey().Key);
+            } while (game.Person.IsAlive());
 
-            ConsoleInterface.StartFromTop();
-            ConsoleInterface.WriteWithClearNextLine(game.Field);
-
-            while (true)
-            {
-                game.Field.MovePerson((Direction)Console.ReadKey().Key);
-            }
-
+            Console.ReadKey();
         }
     }
 }

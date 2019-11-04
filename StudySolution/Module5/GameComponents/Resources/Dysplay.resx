@@ -112,4 +112,7 @@
   <data name="Cell" xml:space="preserve">
     <value>X</value>
   </data>
+  <data name="Exit" xml:space="preserve">
+    <value>E</value>
+  </data>
 </root>

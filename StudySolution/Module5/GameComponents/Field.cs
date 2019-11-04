@@ -28,18 +28,18 @@ namespace GameComponents
 
             for (var i = 0; i < bombCount; i++)
             {
-                var bomb = new Bomb((RandomGenerator.GenerateInt(0, width), RandomGenerator.GenerateInt(0, height)));
+                var bomb = new Bomb((RandomGenerator.GenerateInt(0, width - 1), RandomGenerator.GenerateInt(0, height - 1)));
 
-                while (bombCount < height * width)
+                while (bombCount < ((height * width) - 2))
                 {
-                    if (!Bombs.ContainsKey(bomb.Coordinates))
+                    if (!Bombs.ContainsKey(bomb.Coordinates) && CheckBombCoordinates(bomb.Coordinates))
                     {
                         Bombs.Add(bomb.Coordinates, bomb);
                         break;
                     }
                     else
                     {
-                        bomb.Coordinates = (RandomGenerator.GenerateInt(0, width), RandomGenerator.GenerateInt(0, height));
+                        bomb.Coordinates = (RandomGenerator.GenerateInt(0, width - 1), RandomGenerator.GenerateInt(0, height - 1));
                     }
                 }
             }
@@ -73,8 +73,13 @@ namespace GameComponents
                 bomb.Explode(bomb.Damage);
                 Bombs.Remove(bomb.Coordinates);
                 Bombs.Add(bomb.Coordinates, bomb);
-                OnCollapsed(new FieldEventArgs(Resources.Dysplay.Bang));
+                OnCollapsed(new FieldEventArgs(string.Concat(Resources.Dysplay.Bang, $" -{bomb.Damage}")));
             }
+        }
+
+        private bool CheckBombCoordinates((int, int) coordinates)
+        {
+            return coordinates != (0, 0) && coordinates != (Width - 1, Height - 1);
         }
 
         private void CallEvent(FieldEventArgs e, FieldStateHandler handler)

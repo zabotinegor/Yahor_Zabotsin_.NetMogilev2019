@@ -38,11 +38,11 @@ namespace GameComponents
             return $"{Resources.Dysplay.Person} ";
         }
 
-        public string ToString(bool live)
+        public string ToString(bool showLive)
         {
             var result = string.Concat(Name, ": ");
 
-            if (live)
+            if (showLive)
             {
                 for (var i = 1; i <= this.live; i++)
                 {

@@ -123,4 +123,13 @@
   <data name="EnterName" xml:space="preserve">
     <value>Введите свое имя</value>
   </data>
+  <data name="EndOver" xml:space="preserve">
+    <value>Игра окончена!</value>
+  </data>
+  <data name="You" xml:space="preserve">
+    <value>Вы</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
 </root>

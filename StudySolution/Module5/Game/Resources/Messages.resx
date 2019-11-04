@@ -103,4 +103,13 @@
   <data name="EnterName" xml:space="preserve">
     <value>Enter your name</value>
   </data>
+  <data name="EndOver" xml:space="preserve">
+    <value>Game over!</value>
+  </data>
+  <data name="You" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
 </root>

@@ -8,7 +8,7 @@
 
         public Bomb((int x, int y) coordinates) : base(coordinates)
         {
-            Damage = RandomGenerator.GenerateInt(0, 10);
+            Damage = RandomGenerator.GenerateInt(1, 9);
             IsActive = true;
         }
 
