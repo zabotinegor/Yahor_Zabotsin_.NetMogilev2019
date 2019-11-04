@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return IsActive ? "X " : "o ";
+            return IsActive ? $"{Resources.Dysplay.BombActive} " : $"{Resources.Dysplay.BombDeactive} ";
         }
     }
 }

@@ -5,7 +5,7 @@
 
         private int live;
 
-        protected string Name { get; }
+        internal string Name { get; }
 
         protected internal int Live
         {
@@ -33,7 +33,7 @@
 
         public override string ToString()
         {
-            return "@ ";
+            return $"{Resources.Dysplay.Person} ";
         }
     }
 }

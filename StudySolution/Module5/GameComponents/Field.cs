@@ -6,7 +6,7 @@ namespace GameComponents
 {
     public class Field
     {
-        protected internal event FieldStateHandler Changed;
+        public event FieldStateHandler Changed;
 
         protected int Width { get; }
 
@@ -62,6 +62,7 @@ namespace GameComponents
                     Person.Coordinates = (coordinates.X < Width - 1) ? (coordinates.X + 1, coordinates.Y) : coordinates;
                     break;
             }
+            OnChanged(new FieldEventArgs(Person.Name));
         }
 
         private void CallEvent(FieldEventArgs e, FieldStateHandler handler)

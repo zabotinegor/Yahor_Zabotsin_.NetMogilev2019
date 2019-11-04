@@ -38,7 +38,22 @@
     <Compile Include="FieldObject.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Dysplay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dysplay.resx</DependentUpon>
+    </Compile>
     <Compile Include="RandomGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Dysplay.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dysplay.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dysplay.ru.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

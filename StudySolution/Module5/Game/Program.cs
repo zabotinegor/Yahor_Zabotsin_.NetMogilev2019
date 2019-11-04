@@ -9,13 +9,18 @@ namespace Game
         static void Main(string[] args)
         {
             var game = new Game(Messages.DefoultUserName);
+            game.Field.Changed += (sender, eventArgs) =>
+            {
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine(game.Field);
+                Console.WriteLine(eventArgs.Message);
+            };
+
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine(game.Field);
 
             while (true)
             {
-                //Console.Clear();
-                Console.SetCursorPosition(0, 0);
-                Console.WriteLine(game.Field);
-
                 game.Field.MovePerson((Direction)Console.ReadKey().Key);
             }
 
