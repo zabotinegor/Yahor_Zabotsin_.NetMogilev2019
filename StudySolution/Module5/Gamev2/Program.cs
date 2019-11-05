@@ -128,7 +128,7 @@ namespace Gamev2
                     ClearCurrentConsoleLine();
                     if (bombs.TryGetValue(personCoordinates, out var bomb) && bomb.active)
                     {
-                        lifePoints -= godMode ? bomb.damage : 0;
+                        lifePoints -= godMode ? 0 : bomb.damage;
                         ClearCurrentConsoleLine();
                         WriteLine($"Boom!  -{bomb.damage}");
                         bombs.Remove(personCoordinates);
