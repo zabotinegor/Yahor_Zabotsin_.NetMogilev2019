@@ -18,11 +18,11 @@ namespace Gamev2
             #endregion
 
             #region Symbols for display
-            const string SYMBOL_PERSON = "@ ";
-            const string SYMBOL_CELL = "X ";
-            const string SYMBOL_EXIT = "E";
-            const string SYMBOL_BOMB = "o ";
-            const string SYMBOL_LIFE = "* ";
+            const string symbolPerson = "@ ";
+            const string symbolCell = "X ";
+            const string symbolExit = "E";
+            const string symbolBomb = "o ";
+            const string symbolLife = "* ";
             #endregion
 
             #region User
@@ -39,8 +39,8 @@ namespace Gamev2
                 WriteLine("The player has 10 hit points.\n" +
                           "10 traps are randomly set on the field, the damage of which is determined randomly (from 1 to 10).\n" +
                           "Traps on the field are not visible, the player walks blindly. Does not go beyond the borders.\r\nGood luck.\n");
-                WriteLine($"{SYMBOL_PERSON}- you\n" +
-                          $"{SYMBOL_EXIT} - exit");
+                WriteLine($"{symbolPerson}- you\n" +
+                          $"{symbolExit}- exit");
                 var currentCursorLine = CursorTop;
                 #endregion
 
@@ -75,7 +75,7 @@ namespace Gamev2
 
                     for (var i = 0; i < lifePoints; i++)
                     {
-                        personLife = string.Concat(personLife, SYMBOL_LIFE);
+                        personLife = string.Concat(personLife, symbolLife);
                     }
 
                     personLife = $"{personLife}\n";
@@ -91,11 +91,11 @@ namespace Gamev2
                     {
                         for (var j = 0; j < downBorder; j++)
                         {
-                            var temp = ((j, i) == personCoordinates) ? SYMBOL_PERSON :
-                                (bombs.TryGetValue((j, i), out var bomb1) && !bomb1.active) ? SYMBOL_BOMB :
-                                (bombs.TryGetValue((j, i), out var bomb2) && godMode) ? $"{bomb2.damage} " : SYMBOL_CELL;
+                            var temp = ((j, i) == personCoordinates) ? symbolPerson :
+                                (bombs.TryGetValue((j, i), out var bomb1) && !bomb1.active) ? symbolBomb :
+                                (bombs.TryGetValue((j, i), out var bomb2) && godMode) ? $"{bomb2.damage} " : symbolCell;
 
-                            field = string.Concat(field, ((i == rightBorder - 1) && (j == downBorder - 1)) ? SYMBOL_EXIT : temp);
+                            field = string.Concat(field, ((i == rightBorder - 1) && (j == downBorder - 1)) ? symbolExit : temp);
                         }
 
                         field = $"{field}\n";
