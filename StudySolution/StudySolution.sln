@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMath", "Module3\Custo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataInput", "Module3\DataInput\DataInput\DataInput.csproj", "{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module5.Console", "Module5.Console", "{2B8BC9FC-969B-48B6-A709-2030F81A9614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamev2", "Module5\Gamev2\Gamev2.csproj", "{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,10 @@ Global
 		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +84,7 @@ Global
 		{E3C97FB2-0603-423B-8740-AAC394443DD4} = {21A869B9-AC86-48EA-BA54-0188F58AE659}
 		{1BAF8634-E20F-4771-B840-B09A117F8066} = {21A869B9-AC86-48EA-BA54-0188F58AE659}
 		{DCA9EF2E-5756-458A-AD13-0B6BEBF446F1} = {21A869B9-AC86-48EA-BA54-0188F58AE659}
+		{FD4D7B94-07B2-4FF1-AD35-2E2FD8EE4B9C} = {2B8BC9FC-969B-48B6-A709-2030F81A9614}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD0C37CE-C7E8-46A9-BFAD-88979133DD7C}

@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/StudySolution/Module5/Interface/IGameLogic.cs
+/StudySolution/Module5/Interface/IConsoleGameLogic.cs
+/StudySolution/Module5/Interface/ConsoleGameLogic.cs
+/StudySolution/Module5/Interface/Commands.cs
