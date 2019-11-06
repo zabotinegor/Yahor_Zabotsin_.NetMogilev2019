@@ -9,12 +9,12 @@ namespace Gamev2
         static void Main(string[] args)
         {
             #region Game parameters
-            var godMode = (args.Length != 0) && args[0].Equals("-g");
-            var rightBorder = 10;
-            var downBorder = 10;
-            var bombCount = 10;
+            bool godMode = (args.Length != 0) && args[0].Equals("-g");
+            int rightBorder = 10;
+            int downBorder = 10;
+            int bombCount = 10;
             IDictionary<(int x, int y), (bool active, int damage)> bombs;
-            var random = new Random((int)DateTime.Now.Ticks);
+            Random random = new Random((int)DateTime.Now.Ticks);
             #endregion
 
             #region Symbols for display
